@@ -29,3 +29,21 @@ if(Notification.permission === 'granted'){
      });
  };
 
+
+// training oop 
+// class geolocation{
+//     position:geoPostion
+//     error:Err
+//     constructor(position:geoPostion,error:Err){
+//         this.position=position
+//         this.error=error
+//     }
+//     success(){
+//         const {latitude, longitude}= this.position.coords;
+//         console.log(latitude,longitude)
+//     }
+//     fail(){
+//         console.log(this.error.message);
+//     }
+// }
+// let successCallback=new geolocation()
