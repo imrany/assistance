@@ -1,0 +1,9 @@
+{
+    "short_name":"Medical Archive",
+    "name":"Medical Archive",
+    "description":"Medical Archive is a medical platform that containing questions and anwsers that are medical related.",
+    "display":"standalone",
+    "icons":[
+
+    ]
+}
