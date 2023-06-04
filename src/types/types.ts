@@ -3,14 +3,20 @@ type GlobalContent={
     path:string
 }
 
-type DetailType={
-    question:string,
-    answer:string,
-    url:string,
-    tags:string[]
+interface geoPostion{
+    coords: {
+        latitude:number,
+        longitude:number
+    }
 }
+
+interface Err{
+    message:string
+}
+
 
 export type{
     GlobalContent,
-    DetailType,
+    geoPostion,
+    Err,
 }
