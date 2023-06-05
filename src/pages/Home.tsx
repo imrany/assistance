@@ -1,6 +1,4 @@
 // @flow strict
-import { useState } from "react"
-
 function Home() {
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
@@ -13,8 +11,41 @@ function Home() {
         const request:string=e.target.request.value
         console.log(request)
     }
+
+    const data=[
+        {
+            request:"Hey, how can i help you?",
+            response:"Almost there"
+        },
+        {
+            request:"Hey I'm sick",
+            response:"Get a glass of water and honey"
+        },
+        {
+            request:"Hello there",
+            response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
+        },
+        {
+            request:"Hello there",
+            response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
+        }
+    ]
     return (
         <div>
+            <div className="px-6 py-8 my-14" id="window">
+                {data&&data.map((i,n)=>(
+                    <div key={n} className="mb-20">
+                        <div className="bg-gray-300 px-4 py-2 rounded-[20px] w-fit h-fit absolute right-0 -mt-12">
+                            <p className='text-base max-sm:text-sm text-center'>{i.request}</p>
+                        </div>
+
+                        <div className="border-[1px] px-4 py-2 rounded-[20px] w-fit h-fit">
+                            <p className='text-base max-sm:text-sm text-center'>{i.response}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
             <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer" id="keyboard" onClick={showInput}>
                 <i className="ri-keyboard-fill ri-2x text-gray-700"></i>
             </div>
