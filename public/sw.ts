@@ -20,8 +20,7 @@ const assets = [
     '/img/mail.png',
     '/img/medical.png',
     '/img/server.jpg',
-    '/img/type.jpeg',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    '/img/type.jpeg'
 ]
 
 //installing service worker

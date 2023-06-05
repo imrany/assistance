@@ -8,3 +8,6 @@ html{
 body{
     overflow-x: hidden;
 }
+#show-input{
+    display: none;
+}
