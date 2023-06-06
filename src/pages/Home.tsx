@@ -49,7 +49,7 @@ function Home() {
 
     return (
         <div className="md:flex md:justify-center">
-            <div className="px-6 py-8 my-14 md:w-[80vw] " id="window">
+            <div className="px-6 py-8 my-14 md:w-[80vw]" id="window">
                 {data&&data.map((i,n)=>(
                     <div key={n} className="mb-20">
                         <div className="bg-gray-300 px-4 py-2 rounded-[20px] w-fit h-fit float-right -mt-12">
@@ -68,8 +68,8 @@ function Home() {
             </div>
             <div id="show-input" className="fixed bottom-14 left-0 right-0 border-[1px] bg-white">
                 <form className="flex justify-between" onSubmit={handleSubmit}>
-                    <input placeholder="Type a message" name="request" className="w-full px-4 pb-4 pt-3 text-base "/>
-                    <button><i className="ri-message-fill ri-lg px-3 text-gray-600"></i></button>
+                    <input placeholder="Type a message" name="request" required className="w-full px-4 pb-4 pt-3 text-base focus:outline-none"/>
+                    <button><i className="ri-send-plane-2-fill ri-lg px-3 text-gray-600"></i></button>
                 </form>
             </div>
         </div>

@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 html{
     scroll-behavior: smooth;
 }
@@ -10,4 +11,7 @@ body{
 }
 #show-input{
     display: none;
+}
+.logo{
+    font-family: 'Cherry Bomb One', cursive;
 }

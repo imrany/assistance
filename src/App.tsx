@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 function App() {
   const globalContent={
-    name:"logo",
+    name:"Assistance",
     path:"/"
   }
 
