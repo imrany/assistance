@@ -19,6 +19,9 @@ function Nav() {
             <div className="bg-white py-6 px-4 shadow-lg max-sm:ml-[40vw] max-sm:w-[200px]" id="panel">
                 <ul>
                     <li className="my-2" onClick={panel.close}>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="my-2" onClick={panel.close}>
                         <Link to="/settings">Settings</Link>
                     </li>
                     <li className="my-2" onClick={panel.close}>
