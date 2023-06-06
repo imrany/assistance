@@ -23,10 +23,16 @@ type Status={
     value:boolean,
     text:string
 }
+
+type PageHeaderType={
+    title:string
+}
+
 export type{
     GlobalContent,
     geoPostion,
     Err,
     Data,
-    Status
+    Status,
+    PageHeaderType
 }

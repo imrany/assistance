@@ -8,9 +8,9 @@ function Notice(prop:Props) {
         <>
             {!prop.notice.value?(
                 <div className="fixed top-0 right-0 left-0 h-fit bg-black">
-                    <p className="text-center text-white">{prop.notice.text}</p>
+                    <p className="text-center text-xs text-white">{prop.notice.text}</p>
                 </div>
-            ):""}
+            ):null}
         </>
     );
 };

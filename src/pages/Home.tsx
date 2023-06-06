@@ -46,7 +46,7 @@ function Home() {
             <Window data={data}/>
 
             <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
-                <i className="ri-message-2-fill ri-2x text-gray-700"></i>
+                <i className="ri-message-3-fill ri-2x text-gray-700"></i>
             </div>
             <div id="show-input" className="fixed bottom-14 left-0 right-0 border-[1px] bg-white">
                 <form className="flex justify-between" onSubmit={handleSubmit}>
