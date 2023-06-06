@@ -1,7 +1,12 @@
+import { useEffect, useState } from "react"
+type Data={
+    request:string,
+    response:string
+}[]
 // @flow strict
 function Home() {
-
-    const data=[
+    const [data,setData]=useState<Data>([])
+    const result:Data=[
         {
             request:"Hey, how can i help you?",
             response:"Almost there"
@@ -20,6 +25,11 @@ function Home() {
         }
     ]
 
+    useEffect(()=>{
+        setData(result)
+    },[])
+    console.log(data)
+
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
@@ -34,9 +44,9 @@ function Home() {
             response:"Hello"
         }
         data.push(output)
-        console.log(data)
         e.target.reset()
     }
+
     return (
         <div className="md:flex md:justify-center">
             <div className="px-6 py-8 my-14 md:w-[80vw] " id="window">
