@@ -4,7 +4,6 @@ import App from './App.tsx'
 import 'remixicon/fonts/remixicon.css'
 import './index.css'
 import './index.ts'
-import './components/status.ts'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

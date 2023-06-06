@@ -1,16 +1,9 @@
+// @flow strict
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
 import Window from "../components/Window";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-// @flow strict
+
 function Home() {
-    const navigate=useNavigate()
-    useEffect(()=>{
-        if(navigator.onLine){
-            navigate("/fallback")
-        }
-    },[])
     const data:Data=[
         {
             request:"Hey, how can i help you?",
