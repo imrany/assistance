@@ -27,7 +27,6 @@ if(Notification.permission === 'granted'){
      });
  };
 
-
 // training oop 
 // class geolocation{
 //     position:geoPostion

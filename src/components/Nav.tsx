@@ -10,7 +10,6 @@ function Nav() {
         const panel=document.getElementById("panel") as HTMLDivElement
         panel.style.top="0"
     })
-    
     return (
         <header>
             <div className="flex justify-between pt-6 px-20 max-md:px-10">

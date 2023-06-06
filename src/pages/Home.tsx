@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react"
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
+import Window from "../components/Window";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 // @flow strict
 function Home() {
-    const [data,setData]=useState<Data>([])
-    const result:Data=[
+    const navigate=useNavigate()
+    useEffect(()=>{
+        if(navigator.onLine){
+            navigate("/fallback")
+        }
+    },[])
+    const data:Data=[
         {
             request:"Hey, how can i help you?",
             response:"Almost there"
@@ -23,11 +30,6 @@ function Home() {
         }
     ]
 
-    useEffect(()=>{
-        setData(result)
-    },[])
-    console.log(data)
-
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
@@ -42,27 +44,16 @@ function Home() {
             response:"Hello"
         }
         data.push(output)
+        console.log(data)
         e.target.reset()
     }
 
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
-            <div className="px-6 py-8 my-14 md:w-[80vw]" id="window">
-                {data&&data.map((i,n)=>(
-                    <div key={n} className="mb-20">
-                        <div className="bg-gray-300 px-4 py-2 rounded-[20px] w-fit h-fit float-right -mt-12">
-                            <p className='text-base max-sm:text-sm text-center'>{i.request}</p>
-                        </div>
+            <Window data={data}/>
 
-                        <div className="border-[1px] px-4 py-2 rounded-[20px] w-fit h-fit">
-                            <p className='text-base max-sm:text-sm text-center'>{i.response}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer" id="keyboard" onClick={showInput}>
-                <i className="ri-keyboard-fill ri-2x text-gray-700"></i>
+            <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
+                <i className="ri-message-2-fill ri-2x text-gray-700"></i>
             </div>
             <div id="show-input" className="fixed bottom-14 left-0 right-0 border-[1px] bg-white">
                 <form className="flex justify-between" onSubmit={handleSubmit}>
