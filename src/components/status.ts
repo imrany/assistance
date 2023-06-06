@@ -1,9 +1,7 @@
 // @flow strict
 import { useEffect, useState } from "react";
-type Status={
-    value:boolean,
-    text:string
-}
+import { Status } from "../types/types";
+
 function status() {
     const [status,setStatus]=useState<Status>({
         value:false,

@@ -19,9 +19,14 @@ type Data={
     response:string
 }[]
 
+type Status={
+    value:boolean,
+    text:string
+}
 export type{
     GlobalContent,
     geoPostion,
     Err,
     Data,
+    Status
 }
