@@ -1,6 +1,6 @@
 {
-  "name": "medical-archive",
-  "description": "Medical Archive is a medical platform that containing questions and anwsers that are medical related.",
+  "name": "Assistance",
+  "description": "Find help and you'll get it here.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

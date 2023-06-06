@@ -1,7 +1,7 @@
 {
-    "short_name":"Medical Archive",
-    "name":"Medical Archive",
-    "description":"Medical Archive is a medical platform that containing questions and anwsers that are medical related.",
+    "short_name":"Assistance",
+    "name":"Assistance",
+    "description":"Find help and you'll get it here.",
     "display":"standalone",
     "icons":[
 
