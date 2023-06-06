@@ -6,6 +6,10 @@ import {panel} from "./panel";
 // @flow strict
 function Nav() {
     const {name, path}=useContext(GlobalContext)
+    window.document.addEventListener("scroll",()=>{
+        const panel=document.getElementById("panel") as HTMLDivElement
+        panel.style.top="0"
+    })
     
     return (
         <header>
@@ -16,8 +20,8 @@ function Nav() {
                 </div>
             </div>
 
-            <div className="bg-white py-6 px-4 shadow-lg max-sm:ml-[40vw] max-sm:w-[200px]" id="panel">
-                <ul>
+            <div className="fixed right-0 left-0 top-0 max-sm:top-14 bg-white py-6 px-4 shadow-lg max-sm:left-[37vw] max-sm:w-[63vw]" onClick={panel.close} id="panel">
+                <ul className="w-full">
                     <li className="my-2" onClick={panel.close}>
                         <Link to="/">Home</Link>
                     </li>

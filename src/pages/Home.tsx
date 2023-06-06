@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-type Data={
-    request:string,
-    response:string
-}[]
+import { panel } from "../components/panel";
+import { Data } from "../types/types";
 // @flow strict
 function Home() {
     const [data,setData]=useState<Data>([])
@@ -48,7 +46,7 @@ function Home() {
     }
 
     return (
-        <div className="md:flex md:justify-center">
+        <div className="md:flex md:justify-center" onClick={panel.close}>
             <div className="px-6 py-8 my-14 md:w-[80vw]" id="window">
                 {data&&data.map((i,n)=>(
                     <div key={n} className="mb-20">

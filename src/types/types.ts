@@ -14,9 +14,14 @@ interface Err{
     message:string
 }
 
+type Data={
+    request:string,
+    response:string
+}[]
 
 export type{
     GlobalContent,
     geoPostion,
     Err,
+    Data,
 }
