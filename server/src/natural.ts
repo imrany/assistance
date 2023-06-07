@@ -1,6 +1,6 @@
 // Import Natural
 import * as natural from 'natural';
-import {trainingData} from "./data/data"
+import trainingData from "./data/data.json"
 
 function modal(input:string):string{
   // Create and configure the NaiveBayes classifier
