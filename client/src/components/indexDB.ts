@@ -17,7 +17,15 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("request", ["request"], { unique: false });
     objectStore.createIndex("response", ["response"], { unique: false });
 };
-
+let db:any=localStorage.getItem("db")
+request.onsuccess=(event:any)=>{
+    const db=event.target.result;
+   localStorage.setItem("db",db)
+}
+// function getDB(a:any){
+//     db=a
+//     console.log(db)
+// }
 export{
-   request
+   db
 }

@@ -1,7 +1,7 @@
 type GlobalContent={
     name:string,
     path:string,
-    request:any
+    db:any
 }
 
 interface geoPostion{

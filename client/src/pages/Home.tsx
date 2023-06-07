@@ -11,39 +11,35 @@ type DataAdded={
 }
 
 function Home() {
-    const {request}=useContext(GlobalContext)
+    const {db}=useContext(GlobalContext)
+   
+    console.log(db)
     const [data,setData]=useState<Data>([])
     function addDataToDB(data:DataAdded){
-        request.onsuccess=(event:any)=>{
-            const db=event.target.result;
-            const transaction=db.transaction("Chats","readwrite")
-            const store=transaction.objectStore("Chats")
-            store.put(data)
-            store.onerror=(event:any)=>{
-                console.log(event.target.result)
-            }
-            transaction.oncomplete=()=>{
-                db.close()
-            }
+        const transaction=db.transaction("Chats","readwrite")
+        const store=transaction.objectStore("Chats")
+        store.put(data)
+        store.onerror=(event:any)=>{
+            console.log(event.target.result)
+        }
+        transaction.oncomplete=()=>{
+            db.close()
         }
     }
 
     function fetchFromIDB(){
-        request.onsuccess=(event:any)=>{
-            const db=event.target.result;
-            const transaction=db.transaction("Chats","readwrite")
-            const store=transaction.objectStore("Chats")
-            const getAll=store.getAll()
-            getAll.onsuccess=()=>{
-                setData(getAll.result)
-                console.log(getAll.result)
-            }
-            getAll.onerror=(event:any)=>{
-                console.log(event.target.result)
-            }
-            transaction.oncomplete=()=>{
-                db.close()
-            }
+        const transaction=db.transaction("Chats","readwrite")
+        const store=transaction.objectStore("Chats")
+        const getAll=store.getAll()
+        getAll.onsuccess=()=>{
+            setData(getAll.result)
+            console.log(getAll.result)
+        }
+        getAll.onerror=(event:any)=>{
+            console.log(event.target.result)
+        }
+        transaction.oncomplete=()=>{
+            db.close()
         }
     }
     useEffect(()=>{
