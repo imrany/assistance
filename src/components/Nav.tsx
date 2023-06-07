@@ -21,25 +21,22 @@ function Nav() {
 
             <div className="fixed right-0 left-0 top-0 max-sm:top-14 bg-white py-6 px-4 shadow-lg max-sm:left-[37vw] max-sm:w-[63vw]" onClick={panel.close} id="panel">
                 <ul className="w-full">
-                    <li className="my-2" onClick={panel.close}>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="/settings">Settings</Link>
                     </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="/explore">Explore</Link>
                     </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="/help">Help</Link>
                     </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="/send_feedback">Send Feedback</Link>
                     </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="">Privacy policy</Link>
                     </li>
-                    <li className="my-2" onClick={panel.close}>
+                    <li className="my-4" onClick={panel.close}>
                         <Link to="">Terms of service</Link>
                     </li>
                 </ul>
