@@ -4,28 +4,29 @@ import { Data } from "../types/types";
 import Window from "../components/Window";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
+type DataAdded={
+    id:string,
+    request:string,
+    response:string
+}
 
 function Home() {
     const {request}=useContext(GlobalContext)
     const [data,setData]=useState<Data>([])
-    const result:Data=[
-        {
-            request:"Hey, how can i help you?",
-            response:"Almost there"
-        },
-        {
-            request:"Hey I'm sick",
-            response:"Get a glass of water and honey"
-        },
-        {
-            request:"Hello there",
-            response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
-        },
-        {
-            request:"Hello there",
-            response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
+    function addDataToDB(data:DataAdded){
+        request.onsuccess=(event:any)=>{
+            const db=event.target.result;
+            const transaction=db.transaction("Chats","readwrite")
+            const store=transaction.objectStore("Chats")
+            store.put(data)
+            store.onerror=(event:any)=>{
+                console.log(event.target.result)
+            }
+            transaction.oncomplete=()=>{
+                db.close()
+            }
         }
-    ]
+    }
 
     function fetchFromIDB(){
         request.onsuccess=(event:any)=>{
@@ -35,6 +36,13 @@ function Home() {
             const getAll=store.getAll()
             getAll.onsuccess=()=>{
                 setData(getAll.result)
+                console.log(getAll.result)
+            }
+            getAll.onerror=(event:any)=>{
+                console.log(event.target.result)
+            }
+            transaction.oncomplete=()=>{
+                db.close()
             }
         }
     }
@@ -48,6 +56,8 @@ function Home() {
         let input=document.getElementById("show-input") as HTMLDivElement
         input.style.display="block"
     }
+
+    
     const handleSubmit=async(e:any)=>{
         e.preventDefault()
         try {
@@ -63,10 +73,18 @@ function Home() {
                 })
             })
             const parRes=await response.json()
-            console.log({
+            addDataToDB({
+                id:parRes.encrypted,
                 request:request,
                 response:parRes.response
             })
+            console.log({
+                id:parRes.encrypted,
+                request:request,
+                response:parRes.response
+            })
+            fetchFromIDB()
+            e.target.reset()
         } catch (error:any) {
             console.log(error.message)
         }
