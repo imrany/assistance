@@ -1,0 +1,27 @@
+{
+  "name": "types",
+  "version": "1.0.0",
+  "description": "using typescript",
+  "main": "index.ts",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.23",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "gpu.js": "^2.16.0",
+    "natural": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.13",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "rm -rf ./build && tsc",
+    "dev": "tsc --watch",
+    "start": "ts-node ./src/index.ts"
+  },
+  "author": "imrany",
+  "license": "MIT"
+}
