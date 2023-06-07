@@ -5,7 +5,7 @@ import Window from "../components/Window";
 import { useState } from "react";
 
 function Home() {
-    const data:Data=[
+    const result:Data=[
         {
             request:"Hey, how can i help you?",
             response:"Almost there"
@@ -23,8 +23,7 @@ function Home() {
             response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
         }
     ]
-    const [req,setReq]=useState("")
-    const [res,setRes]=useState("")
+    const [data,setData]=useState<Data>(result)
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
@@ -38,18 +37,15 @@ function Home() {
             request:request,
             response:"Hello"
         }
-        data.push(output)
-        console.log(data)
-        data.map(i=>{
-            setReq(i.request)
-            setRes(i.response)
-        })
+        result.push(output)
+        setData(result)
+        console.log(result)
         e.target.reset()
     }
 
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
-            <Window data={{req,res}}/>
+            <Window data={data}/>
 
             <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
                 <i className="ri-message-3-fill ri-2x text-gray-700"></i>
