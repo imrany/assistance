@@ -52,7 +52,7 @@ function Home() {
         e.preventDefault()
         try {
             const request:string=e.target.request.value
-            let url=`http://localhost:5000/api/`
+            let url=`http://localhost:5000/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
