@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
 
 function Home() {
-    const {db}=useContext(GlobalContext)
+    const {request}=useContext(GlobalContext)
     
     const result:Data=[
         {
@@ -27,11 +27,14 @@ function Home() {
         }
     ]
     function fetchFromIDB(){
-        const transaction=db.transaction("Chats","readwrite")
-        const store=transaction.objectStore("Chats")
-        const getAll=store.getAll()
-        getAll.onsuccess=()=>{
-            console.log(getAll.result)
+        request.onsuccess=(event:any)=>{
+            const db=event.target.result;
+            const transaction=db.transaction("Chats","readwrite")
+            const store=transaction.objectStore("Chats")
+            const getAll=store.getAll()
+            getAll.onsuccess=()=>{
+                console.log(getAll.result)
+            }
         }
     }
     useEffect(()=>{
