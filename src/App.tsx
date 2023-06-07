@@ -12,8 +12,9 @@ import { db } from './components/indexDB'
 function App() {
   const globalContent={
     name:"Assistance",
-    path:"/"
-  }
+    path:"/",
+    db:db
+  };
   return (
     <>
     <GlobalContext.Provider value={globalContent}>
@@ -21,7 +22,7 @@ function App() {
         <Notice notice={status()}/>
         <Nav/>
           <Routes>
-            <Route path="/" element={<Home db={db}/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/settings" element={<Settings/>}/>
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
             <Route path="*" element={<Fallback/>}/>

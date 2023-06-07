@@ -5,7 +5,6 @@ if (!indexedDB) {
 console.log("IndexedDB could not be found in this browser.");
 }
 
- // Let us open our database
 const dbName="assistanceDB"
 const request = window.indexedDB.open(dbName, 3);
 request.onerror = (event:any) => {
@@ -20,15 +19,14 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("response", ["response"], { unique: false });
 };
 
-function getDB(IDB:any){
-    db=IDB
+request.onsuccess=(event:any)=>{
+    const DB=event.target.result;
+    getDB(DB)
+}
+function getDB(DB:any){
+    db=DB
 }
 
-request.onsuccess=(event:any)=>{
-    const db=event.target.result;
-    getDB(db)
-}
-  
 export{
-   db,
+   db
 }

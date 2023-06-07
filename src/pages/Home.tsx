@@ -2,14 +2,12 @@
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
 import Window from "../components/Window";
-import { useEffect, useState } from "react";
-type Props={
-    db:any
-}
-function Home(prop:Props) {
-    const db=prop.db
-    const transaction=db.transaction("Chats","readwrite")
-    const assistanceStore=transaction.objectStore("Chats")
+import { useContext, useEffect, useState } from "react";
+import { GlobalContext } from "../GlobalContext";
+
+function Home() {
+    const {db}=useContext(GlobalContext)
+    
     const result:Data=[
         {
             request:"Hey, how can i help you?",
@@ -29,7 +27,9 @@ function Home(prop:Props) {
         }
     ]
     function fetchFromIDB(){
-        const getAll=assistanceStore.getAll()
+        const transaction=db.transaction("Chats","readwrite")
+        const store=transaction.objectStore("Chats")
+        const getAll=store.getAll()
         getAll.onsuccess=()=>{
             console.log(getAll.result)
         }
@@ -37,7 +37,6 @@ function Home(prop:Props) {
     useEffect(()=>{
         fetchFromIDB();
     },[])
-
     const [data,setData]=useState<Data>(result)
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
