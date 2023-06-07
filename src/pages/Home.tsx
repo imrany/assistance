@@ -2,9 +2,12 @@
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
 import Window from "../components/Window";
-import { useState } from "react";
-
+import { useContext, useState } from "react";
 function Home() {
+    const {db}=useContext(GlobalContext)
+    const transaction=db.transaction("Chats","readwrite")
+    const assistanceStore=transaction.objectStore("Chats")
+
     const result:Data=[
         {
             request:"Hey, how can i help you?",
@@ -23,6 +26,14 @@ function Home() {
             response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
         }
     ]
+    function fetchFromIDB(){
+        const getAll=assistanceStore.getAll()
+        getAll.onsuccess=()=>{
+            console.log(getAll.result)
+        }
+    }
+    fetchFromIDB();
+    
     const [data,setData]=useState<Data>(result)
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
@@ -59,5 +70,6 @@ function Home() {
         </div>
     );
 };
+import { GlobalContext } from "../GlobalContext";
 
 export default Home;
