@@ -7,7 +7,7 @@ import { GlobalContext } from "../GlobalContext";
 
 function Home() {
     const {request}=useContext(GlobalContext)
-    
+    const [data,setData]=useState<Data>([])
     const result:Data=[
         {
             request:"Hey, how can i help you?",
@@ -26,6 +26,7 @@ function Home() {
             response:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio aperiam reprehenderit tempora? Eligendi rerum reprehenderit, omnis quasi adipisci assumenda? Quae, aperiam deserunt. Alias architecto minima ratione? Facere, nesciunt dolore?"
         }
     ]
+
     function fetchFromIDB(){
         request.onsuccess=(event:any)=>{
             const db=event.target.result;
@@ -33,31 +34,42 @@ function Home() {
             const store=transaction.objectStore("Chats")
             const getAll=store.getAll()
             getAll.onsuccess=()=>{
-                console.log(getAll.result)
+                setData(getAll.result)
             }
         }
     }
     useEffect(()=>{
         fetchFromIDB();
     },[])
-    const [data,setData]=useState<Data>(result)
+
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
         let input=document.getElementById("show-input") as HTMLDivElement
         input.style.display="block"
     }
-    const handleSubmit=(e:any)=>{
+    const handleSubmit=async(e:any)=>{
         e.preventDefault()
-        const request:string=e.target.request.value
-        const output={
-            request:request,
-            response:"Hello"
+        try {
+            const request:string=e.target.request.value
+            let url=`http://localhost:5000/api/`
+            const response=await fetch(url,{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    request
+                })
+            })
+            const parRes=await response.json()
+            console.log({
+                request:request,
+                response:parRes.response
+            })
+        } catch (error:any) {
+            console.log(error.message)
         }
-        result.push(output)
-        setData(result)
-        console.log(result)
-        e.target.reset()
     }
 
     return (
