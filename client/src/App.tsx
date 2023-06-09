@@ -7,11 +7,13 @@ import Footer from './components/Footer'
 import { status } from './components/status'
 import Notice from './components/Notice'
 import Settings from './pages/Settings'
+import { db } from './components/indexDB'
 
 function App() {
   const globalContent={
     name:"Assistance",
-    path:"/"
+    path:"/",
+    db:db
   };
   return (
     <>
