@@ -27,9 +27,6 @@ body{
     z-index: 200;
     display: none;
 }
-.bottom{
-    bottom: 0;
-}
-.bottom-start{
-    bottom: 3.5rem;
+.close{
+    display: none;
 }

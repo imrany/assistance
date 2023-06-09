@@ -78,9 +78,15 @@ function Home() {
     }
     useEffect(()=>{
         const input=document.getElementById("show-input") as HTMLDivElement
-        input.classList.add("bottom-start")
-    },[])
+        const footer=document.querySelector("footer") as HTMLElement
+        if(footer.classList.contains("close")){
+            input.style.bottom="0"
+        }else{
+            input.style.bottom="3.5rem"
+        }
 
+    },[])
+    
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
             <div className='preload'></div>
