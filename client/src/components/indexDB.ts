@@ -23,7 +23,6 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("response", ["response"], { unique: false });
 };
 
-console.log(db)
 export{
-   db
+   request
 }
