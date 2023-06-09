@@ -29,7 +29,7 @@ class interact{
         this.response=response
     }
     trial(){
-        console.log(`this is trial id:${this.response}`)
+        return `this is trial id:${this.response}`
     }
     
 }
@@ -38,7 +38,7 @@ request.onsuccess=(event:any)=>{
     console.log(db)
 }
 const intDB=new interact("454","hey","nice")
-console
+console.log(intDB)
 export{
    db
 }
