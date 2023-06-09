@@ -30,3 +30,16 @@ body{
 .close{
     display: none;
 }
+dialog{
+    opacity: 0;
+    scale: 0;
+    display: block;
+    transition: all 2.5s;
+}
+dialog[open]{
+    opacity: 1;
+    scale: 2;
+}
+/* dialog::backdrop{
+    background-color: rgb(122, 14, 223, 0.2);
+} */
