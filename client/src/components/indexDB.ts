@@ -18,15 +18,19 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("request", ["request"], { unique: false });
     objectStore.createIndex("response", ["response"], { unique: false });
 };
-
-class interact{
-    id:string
-    request:string
+type interactDBType={
+    id:string,
+    request:string,
     response:string
-    constructor( id:string,request:string,response:string) {
-        this.id=id,
-        this.request=request,
-        this.response=response
+}
+class interact{
+    id
+    request
+    response
+    constructor(props:interactDBType) {
+        this.id=props.id,
+        this.request=props.request,
+        this.response=props.response
     }
     trial(){
         console.log(`this is trial id:${this.response}`)
@@ -37,7 +41,7 @@ request.onsuccess=(event:any)=>{
     db=event.target.result;
     console.log(db)
 }
-const intDB=new interact("454","hey","nice")
+const interact=new int
 console
 export{
    db
