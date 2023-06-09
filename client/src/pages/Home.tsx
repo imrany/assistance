@@ -1,16 +1,10 @@
 // @flow strict
 import { panel } from "../components/panel";
-import { Data } from "../types/types";
+import { Data, DataAdded } from "../types/types";
 import Window from "../components/Window";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
 import { loader } from "../components/preloader";
-import Footer from "../components/Footer";
-type DataAdded={
-    id:string,
-    request:string,
-    response:string
-}
 
 function Home() {
     const {db}=useContext(GlobalContext)
@@ -84,7 +78,6 @@ function Home() {
         }else{
             input.style.bottom="3.5rem"
         }
-
     },[])
     
     return (

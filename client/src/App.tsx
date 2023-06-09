@@ -48,7 +48,6 @@ function App() {
             <Route path="*" element={<Fallback/>}/>
           </Routes>
         <Footer/>
-        
       </Router>
     </GlobalContext.Provider>
     </>

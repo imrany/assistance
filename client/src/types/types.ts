@@ -29,11 +29,18 @@ type PageHeaderType={
     title:string
 }
 
+type DataAdded={
+    id:string,
+    request:string,
+    response:string
+}
+
 export type{
     GlobalContent,
     geoPostion,
     Err,
     Data,
     Status,
-    PageHeaderType
+    PageHeaderType,
+    DataAdded
 }
