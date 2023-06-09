@@ -79,7 +79,7 @@ function Home() {
             input.style.bottom="3.5rem"
         }
     },[])
-    
+
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
             <div className='preload'></div>
