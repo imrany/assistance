@@ -3,13 +3,13 @@ import { GlobalContext } from './GlobalContext'
 import Home from './pages/Home'
 import Fallback from './pages/Fallback'
 import Nav from './components/Nav'
-import Footer from './components/Footer'
 import { status } from './components/status'
 import Notice from './components/Notice'
 import Settings from './pages/Settings'
 import { request } from './components/indexDB'
 import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
+import Footer from './components/Footer'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -48,6 +48,7 @@ function App() {
             <Route path="*" element={<Fallback/>}/>
           </Routes>
         <Footer/>
+        
       </Router>
     </GlobalContext.Provider>
     </>
