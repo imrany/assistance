@@ -1,6 +1,6 @@
 const indexedDB =window.indexedDB 
 
-let db:any;
+var db:any;
 if (!indexedDB) {
 console.log("IndexedDB could not be found in this browser.");
 }
@@ -11,18 +11,18 @@ request.onerror = (event:any) => {
     console.log(event.target.result)
 };
 
+request.onsuccess=(event:any)=>{
+    db=event.target.result;
+}
+
 request.onupgradeneeded = (event:any) => {
-    db = event.target.result;
+    const db = event.target.result;
     const objectStore = db.createObjectStore("Chats", { keyPath: "id" });
   
     objectStore.createIndex("request", ["request"], { unique: false });
     objectStore.createIndex("response", ["response"], { unique: false });
 };
 
-request.onsuccess=(event:any)=>{
-    db=event.target.result;
-    console.log(db)
-}
 console.log(db)
 export{
    db
