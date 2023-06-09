@@ -19,26 +19,11 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("response", ["response"], { unique: false });
 };
 
-class interact{
-    id:string
-    request:string
-    response:string
-    constructor( id:string,request:string,response:string) {
-        this.id=id,
-        this.request=request,
-        this.response=response
-    }
-    trial(){
-        return `this is trial id:${this.response}`
-    }
-    
-}
 request.onsuccess=(event:any)=>{
     db=event.target.result;
     console.log(db)
 }
-const intDB=new interact("454","hey","nice")
-console.log(intDB)
+console.log(db)
 export{
    db
 }
