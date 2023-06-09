@@ -19,7 +19,6 @@ request.onupgradeneeded = (event:any) => {
     const db = event.target.result;
     const objectStore = db.createObjectStore("Chats", { keyPath: "index", autoIncrement: true });
     
-    objectStore.createIndex("index", ["index"], { unique: true });
     objectStore.createIndex("request", ["request"], { unique: false });
     objectStore.createIndex("response", ["response"], { unique: false });
 };

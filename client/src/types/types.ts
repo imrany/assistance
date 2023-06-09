@@ -30,7 +30,6 @@ type PageHeaderType={
 }
 
 type DataAdded={
-    id:string,
     request:string,
     response:string
 }

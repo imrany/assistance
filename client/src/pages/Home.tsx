@@ -58,7 +58,6 @@ function Home() {
             })
             const parRes=await response.json()
             addDataToDB({
-                id: parRes.encrypted,
                 request: req,
                 response: parRes.response
             })
