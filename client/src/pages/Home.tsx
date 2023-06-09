@@ -2,8 +2,9 @@
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
 import Window from "../components/Window";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
+import { loader } from "../components/preloader";
 type DataAdded={
     id:string,
     request:string,
@@ -12,18 +13,14 @@ type DataAdded={
 
 function Home() {
     const {db}=useContext(GlobalContext)
-   
-    console.log(db)
     const [data,setData]=useState<Data>([])
+
     function addDataToDB(data:DataAdded){
         const transaction=db.transaction("Chats","readwrite")
         const store=transaction.objectStore("Chats")
-        store.put(data)
+        store.add(data)
         store.onerror=(event:any)=>{
             console.log(event.target.result)
-        }
-        transaction.oncomplete=()=>{
-            db.close()
         }
     }
 
@@ -33,31 +30,27 @@ function Home() {
         const getAll=store.getAll()
         getAll.onsuccess=()=>{
             setData(getAll.result)
-            console.log(getAll.result)
         }
         getAll.onerror=(event:any)=>{
             console.log(event.target.result)
         }
-        transaction.oncomplete=()=>{
-            db.close()
-        }
     }
-    useEffect(()=>{
+    setTimeout(()=>{
         fetchFromIDB();
-    },[])
-
+    },10)
+    
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
         let input=document.getElementById("show-input") as HTMLDivElement
         input.style.display="block"
     }
-
     
     const handleSubmit=async(e:any)=>{
         e.preventDefault()
+        loader.on()
         try {
-            const request:string=e.target.request.value
+            const req:string=e.target.request.value
             let url=`http://localhost:5000/api/chat`
             const response=await fetch(url,{
                 method:"POST",
@@ -65,29 +58,27 @@ function Home() {
                     "content-type":"application/json"
                 },
                 body:JSON.stringify({
-                    request
+                    request:req
                 })
             })
             const parRes=await response.json()
             addDataToDB({
-                id:parRes.encrypted,
-                request:request,
-                response:parRes.response
+                id: parRes.encrypted,
+                request: req,
+                response: parRes.response
             })
-            console.log({
-                id:parRes.encrypted,
-                request:request,
-                response:parRes.response
-            })
-            fetchFromIDB()
+            fetchFromIDB();
             e.target.reset()
+            loader.off()
         } catch (error:any) {
+            loader.off()
             console.log(error.message)
         }
     }
 
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
+            <div className='preload'></div>
             <Window data={data}/>
 
             <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>

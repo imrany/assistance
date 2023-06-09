@@ -7,9 +7,28 @@ import Footer from './components/Footer'
 import { status } from './components/status'
 import Notice from './components/Notice'
 import Settings from './pages/Settings'
-import { db } from './components/indexDB'
+import { request } from './components/indexDB'
+import { useEffect, useState } from 'react'
+import { loader } from './components/preloader'
 
 function App() {
+  const [db,setDB]=useState<any>(null)
+  function initDB(){
+    loader.on()
+    request.onsuccess=(event:any)=>{
+        setDB(event.target.result)
+        loader.off()
+    }
+    request.onerror=(event:any)=>{
+      loader.off()
+      console.log(event.target.result)
+    }
+  }
+
+  useEffect(()=>{
+    initDB()
+  },[]);
+  
   const globalContent={
     name:"Assistance",
     path:"/",
@@ -17,6 +36,7 @@ function App() {
   };
   return (
     <>
+    <div className='preload'></div>
     <GlobalContext.Provider value={globalContent}>
       <Router>
         <Notice notice={status()}/>
