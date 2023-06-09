@@ -2,8 +2,9 @@
 import { panel } from "../components/panel";
 import { Data } from "../types/types";
 import Window from "../components/Window";
-import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../GlobalContext";
+import { useEffect, useState } from "react";
+import { indexDB } from "../components/indexDB";
+
 type DataAdded={
     id:string,
     request:string,
@@ -11,8 +12,7 @@ type DataAdded={
 }
 
 function Home() {
-    const {db}=useContext(GlobalContext)
-   
+    let db=indexDB()
     console.log(db)
     const [data,setData]=useState<Data>([])
     function addDataToDB(data:DataAdded){
