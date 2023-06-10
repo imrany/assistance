@@ -5,10 +5,12 @@ import Window from "../components/Window";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
 import { loader } from "../components/preloader";
+import Dialog from "../components/Dialog";
 
 function Home() {
     const {db}=useContext(GlobalContext)
     const [data,setData]=useState<Data>([])
+    const [alert,setAlert]=useState("")
 
     function addDataToDB(data:DataAdded){
         const transaction=db.transaction("Chats","readwrite")
@@ -32,6 +34,7 @@ function Home() {
     }
     setTimeout(()=>{
         fetchFromIDB();
+        setAlert("what message")
     },10)
     
     const showInput=()=>{
@@ -98,6 +101,7 @@ function Home() {
                     <button><i className="ri-send-plane-2-fill ri-lg px-3 text-gray-600"></i></button>
                 </form>
             </div>
+            <Dialog message={alert}/>
         </div>
     );
 };
