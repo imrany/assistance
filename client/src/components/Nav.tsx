@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "../GlobalContext";
 import { Link } from "react-router-dom";
-import {panel} from "./panel";
+import {panel} from "./func";
 
 // @flow strict
 function Nav() {

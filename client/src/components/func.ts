@@ -9,6 +9,17 @@ const panel={
         panel.style.display="none"
     }
 }
+const dialog={
+    close(){
+        const d=document.getElementById("d") as HTMLDialogElement
+        d.close()
+    },
+    open(){
+        const d=document.getElementById("d") as HTMLDialogElement
+        d.showModal()
+    }
+}
 export{
-    panel
+    panel,
+    dialog
 }

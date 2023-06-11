@@ -1,4 +1,4 @@
-import { panel } from "../components/panel";
+import { panel } from "../components/func";
 
 // @flow strict
 function Fallback() {

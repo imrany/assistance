@@ -1,5 +1,5 @@
 // @flow strict
-import { panel } from "../components/panel";
+import { dialog, panel } from "../components/func";
 import { Data, DataAdded } from "../types/types";
 import Window from "../components/Window";
 import { useContext, useEffect, useState } from "react";
@@ -82,15 +82,12 @@ function Home() {
         }
     },[])
 
-    const open_dialog=()=>{
-        const d=document.getElementById("d") as HTMLDialogElement
-        d.showModal()
-    }
+   
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
             <div className='preload'></div>
             <Window data={data}/>
-            <button onClick={open_dialog}>Open dialog</button>
+            <button onClick={dialog.open}>Open dialog</button>
 
             <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
                 <i className="ri-message-3-fill ri-2x text-gray-700"></i>
