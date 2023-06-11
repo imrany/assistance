@@ -1,11 +1,11 @@
 // @flow strict
 import { dialog, panel } from "../components/func";
 import { Data, DataAdded } from "../types/types";
-import Window from "../components/Window";
+import Window from "../components/UI/Window";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
 import { loader } from "../components/preloader";
-import Dialog from "../components/Dialog";
+import Dialog from "../components/UI/Dialog";
 
 function Home() {
     const {db}=useContext(GlobalContext)
@@ -30,6 +30,7 @@ function Home() {
         }
         getAll.onerror=(event:any)=>{
             console.log(event.target.result)
+            dialog.open()
         }
     }
     setTimeout(()=>{
@@ -48,7 +49,7 @@ function Home() {
         loader.on()
         try {
             const req:string=e.target.request.value
-            let url=`http://localhost:5000/api/chat`
+            let url=` http://192.168.43.172:5000/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
@@ -68,7 +69,7 @@ function Home() {
             loader.off()
         } catch (error:any) {
             loader.off()
-            console.log(error.message)
+            setAlert(error.message)
             dialog.open()
         }
     }

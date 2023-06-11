@@ -1,4 +1,4 @@
-import { dialog, reload } from "./func";
+import { dialog, reload } from "../func";
 
 // @flow strict
 type Props={

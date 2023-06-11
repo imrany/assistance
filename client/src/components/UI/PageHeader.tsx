@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { PageHeaderType } from "../types/types";
+import { PageHeaderType } from "../../types/types";
 
 // @flow strict
 type Props = {

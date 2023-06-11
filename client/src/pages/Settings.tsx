@@ -1,6 +1,6 @@
 // @flow strict
 
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/UI/PageHeader";
 
 function Settings() {
     const val={
