@@ -70,6 +70,7 @@ function Home() {
         } catch (error:any) {
             loader.off()
             console.log(error.message)
+            dialog.open()
         }
     }
     useEffect(()=>{

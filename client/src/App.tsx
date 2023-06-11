@@ -10,6 +10,7 @@ import { request } from './components/indexDB'
 import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
 import Footer from './components/Footer'
+import { dialog } from './components/func'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -22,6 +23,7 @@ function App() {
     request.onerror=(event:any)=>{
       loader.off()
       console.log(event.target.result)
+      dialog.open()
     }
   }
   useEffect(()=>{
