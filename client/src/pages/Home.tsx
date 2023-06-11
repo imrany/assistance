@@ -34,7 +34,6 @@ function Home() {
     }
     setTimeout(()=>{
         fetchFromIDB();
-        setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },10)
     
     const showInput=()=>{
@@ -81,6 +80,7 @@ function Home() {
         }else{
             input.style.bottom="3.5rem"
         }
+        setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },[])
 
    

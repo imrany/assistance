@@ -6,7 +6,7 @@ type Props={
 }
 function Dialog(prop:Props) {
     return (
-        <dialog id="d" className="rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw] pb-6 h-fit">
+        <dialog id="d" className="shadow-lg rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw] pb-6 h-fit max-sm:scale-[0.9]">
             <button onClick={dialog.close} className="ml-[auto]">
                 <i className="ri-close-fill ri-lg"></i>
             </button>
