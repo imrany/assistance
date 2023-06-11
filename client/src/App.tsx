@@ -38,7 +38,7 @@ function App() {
   return (
     <>
     <div className='preload'>
-      <p className='fixed max-sm:left-[43vw] left-[46vw] md:left-[48vw] top-[60vh] text-lg'>Loading</p>
+      <p className='fixed max-sm:left-[42vw] left-[46vw] md:left-[48vw] top-[60vh] text-lg'>Loading...</p>
     </div>
     <GlobalContext.Provider value={globalContent}>
       <Router>
