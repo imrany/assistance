@@ -19,7 +19,12 @@ const dialog={
         d.showModal()
     }
 }
+
+const reload=()=>{
+    window.location.reload()
+}
 export{
     panel,
-    dialog
+    dialog,
+    reload
 }

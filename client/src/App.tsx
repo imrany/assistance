@@ -10,7 +10,6 @@ import { request } from './components/indexDB'
 import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
 import Footer from './components/Footer'
-// import Dialog from './components/Dialog'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -47,7 +46,6 @@ function App() {
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
             <Route path="*" element={<Fallback/>}/>
           </Routes>
-          {/* <Dialog/> */}
         <Footer/>
       </Router>
     </GlobalContext.Provider>

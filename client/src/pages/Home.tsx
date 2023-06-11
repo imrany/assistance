@@ -34,7 +34,7 @@ function Home() {
     }
     setTimeout(()=>{
         fetchFromIDB();
-        setAlert("what message")
+        setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },10)
     
     const showInput=()=>{
