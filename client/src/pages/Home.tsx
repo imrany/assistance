@@ -104,6 +104,7 @@ function Home() {
                 </form>
             </div>
             <Dialog message={alert}/>
+            <div id="window-bottom"></div>
         </div>
     );
 };

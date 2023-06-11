@@ -17,7 +17,6 @@ function Window(prop:Props) {
                     </div>
                 </div>
             ))}
-            <div id="window-bottom"></div>
         </div>
     );
 };
