@@ -6,13 +6,13 @@ type Props={
 }
 function Dialog(prop:Props) {
     return (
-        <dialog id="d" className="rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw]">
+        <dialog id="d" className="rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw]">
             <button onClick={dialog.close} className="ml-[auto]">
                 <i className="ri-close-fill ri-lg"></i>
             </button>
             <div className="text-center pb-4">
-                <p className="text-2xl  max-sm:text-xl my-2">An error has occurred</p>
-                <p className="text-sm text-gray-400 lg:w-[300px]">
+                <p className="text-2xl  max-sm:text-lg my-2">An error has occurred</p>
+                <p className="text-sm max-sm:text-xs text-gray-400 lg:w-[300px]">
                     {prop.message}
                 </p>
                 <div className="flex justify-center mt-4">
