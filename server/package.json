@@ -15,12 +15,14 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.13",
+    "nodemon": "^2.0.22",
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "build": "rm -rf ./build && tsc",
-    "start": "node ./build/index",
-    "dev": "ts-node ./src/index.ts"
+    "build": "npx tsc",
+    "start": "node ./build/index.js",
+    "dev": "npx nodemon",
+    "clean": "rm -rf ./build"
   },
   "author": "imrany",
   "license": "MIT"
