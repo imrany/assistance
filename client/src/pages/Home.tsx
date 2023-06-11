@@ -1,5 +1,5 @@
 // @flow strict
-import { dialog, panel } from "../components/func";
+import { dialog, panel, scroll_bottom } from "../components/func";
 import { Data, DataAdded } from "../types/types";
 import Window from "../components/UI/Window";
 import { useContext, useEffect, useState } from "react";
@@ -33,10 +33,7 @@ function Home() {
             dialog.open()
         }
     }
-    setTimeout(()=>{
-        fetchFromIDB();
-    },10)
-    
+
     const showInput=()=>{
         let keyboard=document.getElementById("keyboard") as HTMLDivElement
         keyboard.style.display="none"
@@ -66,6 +63,7 @@ function Home() {
                 response: parRes.response
             })
             fetchFromIDB();
+            scroll_bottom()
             e.target.reset()
             loader.off()
         } catch (error:any) {
@@ -85,7 +83,12 @@ function Home() {
         setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },[])
 
-   
+    window.onclick=()=>{
+        fetchFromIDB()
+    }
+    // setTimeout(()=>{
+    //     fetchFromIDB();
+    // },10)
     return (
         <div className="md:flex md:justify-center" onClick={panel.close}>
             <div className='preload'></div>
