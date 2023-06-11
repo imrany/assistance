@@ -49,7 +49,7 @@ function Home() {
         loader.on()
         try {
             const req:string=e.target.request.value
-            let url=` http://192.168.43.172:5000/api/chat`
+            let url=` http://192.168.43.172:5500/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
@@ -61,6 +61,7 @@ function Home() {
             })
             const parRes=await response.json()
             addDataToDB({
+                index:parRes.index,
                 request: req,
                 response: parRes.response
             })
