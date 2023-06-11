@@ -1,7 +1,7 @@
 {
-  "name": "assistance",
+  "name": "Assistance",
   "version": "1.0.0",
-  "description": "Using AI to help the community.",
+  "description": "Find help and you'll get it here.",
   "main": "./build/index.js",
   "dependencies": {
     "brain.js": "^2.0.0-beta.23",
