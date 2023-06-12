@@ -44,7 +44,7 @@ function Settings() {
                     </div>
 
                     <div className="mt-8">
-                        <a href="https://wa.me/254734720752" className="text-xl max-sm:text-base"><i className="ri-question-line"></i> Help</a>
+                        <Link to="/help" className="text-xl max-sm:text-base"><i className="ri-question-line"></i> Help</Link>
                         <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">Help center, contact us, privacy policy.</p>
                     </div>
                 </div>

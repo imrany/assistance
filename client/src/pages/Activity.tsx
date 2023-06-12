@@ -51,7 +51,7 @@ function Activity() {
         <div>
             <PageHeader val={val}/>
             <div className="flex flex-col py-4 px-4">
-                <div className="lg:px-14 pt-">
+                <div className="lg:px-14">
                     <div className="mb-12">
                         {history&&history.map(i=>(
                             <div className="my-6 border-b-[1px] pb-4" key={i.index}>
