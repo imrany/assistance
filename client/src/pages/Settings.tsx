@@ -49,7 +49,7 @@ function Settings() {
             <div className="lg:px-14 py-4">
                 <div className="">
                     <p className="text-lg text-blue-500">Legal information</p>
-                    <a href="" className="max-sm:text-sm">Open source licenses</a>
+                    <a href="../../LICENSE" download="MIT License" className="max-sm:text-sm">Open source licenses</a>
                 </div>
             </div>
         </div>
