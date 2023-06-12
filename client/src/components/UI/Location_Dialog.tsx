@@ -4,7 +4,7 @@ import { dialog } from "../func";
 type Props={
     message:string
 }
-function Delete_Dialog(prop:Props) {
+function Location_Dialog(prop:Props) {
     const allow=()=>{
         dialog.close()
     }
@@ -24,4 +24,4 @@ function Delete_Dialog(prop:Props) {
     );
 };
 
-export default Delete_Dialog;
+export default Location_Dialog;
