@@ -27,6 +27,7 @@ const scroll_bottom=()=>{
     const window_bottom=document.getElementById("window-bottom") as HTMLDivElement
     window_bottom.scrollIntoView()
 }
+
 export{
     panel,
     dialog,

@@ -1,10 +1,11 @@
 // @flow strict
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import PageHeader from "../components/UI/PageHeader";
 import img from "/icons/assistance-72x72.png"
 import { dialog } from "../components/func";
 import { GlobalContext } from "../GlobalContext";
+import Delete_Dialog from "../components/UI/Delete_Dialog";
 function Activity() {
     const {db}=useContext(GlobalContext)
     const [history,setHistory]=useState([
@@ -33,6 +34,18 @@ function Activity() {
     window.onclick=()=>{
         fetchFromIDB()
     }
+    const [alert, setAlert]=useState({
+        text:``,
+        index:0
+    })
+    const delete_history=(index:any)=>{
+        dialog.open()
+        setAlert({
+            text:`Do you want to delete this? ${index}`,
+            index
+        })
+        return index
+    }
     return (
         <div>
             <PageHeader val={val}/>
@@ -50,11 +63,12 @@ function Activity() {
                                 <div className="flex mt-6 text-gray-500">
                                     <p className="text-sm">1:44 pm</p>
                                     <i className="ri-sm ri-map-pin-fill mx-2"></i>
-                                    <p className="text-sm mx-2">Details</p>
+                                    <i onClick={()=>delete_history(i.index)} className="text-sm mx-2 ri-delete-bin-fill cursor-pointer"></i>
                                 </div>
                             </div>
                         ))}
                     </div>
+                    <Delete_Dialog message={alert}/>
                 </div>
             </div>
         </div>
