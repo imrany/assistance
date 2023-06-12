@@ -1,5 +1,4 @@
 // @flow strict
-
 import { Link } from "react-router-dom";
 import PageHeader from "../components/UI/PageHeader";
 import { dialog } from "../components/func";
