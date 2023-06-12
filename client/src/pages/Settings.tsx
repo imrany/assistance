@@ -3,8 +3,8 @@
 import { Link } from "react-router-dom";
 import PageHeader from "../components/UI/PageHeader";
 import { dialog } from "../components/func";
-import Dialog from "../components/UI/Dialog";
 import { useState } from "react";
+import Location_Dialog from "../components/UI/delete_Dialog";
 
 function Settings() {
     const [alert,setAlert]=useState("")
@@ -19,7 +19,7 @@ function Settings() {
         <div className="flex flex-col py-4 px-4">
             <PageHeader val={val}/>
             <div className="border-b-[1px]">
-                <div className="lg:px-14 pt-6 h-[70vh]">
+                <div className="lg:px-14 pt-6 h-[80vh]">
                     <div className="mb-8">
                         <p className="text-lg text-blue-500">Account</p>
                         <p className="text-xl max-sm:text-base">Switch account</p>
@@ -28,6 +28,7 @@ function Settings() {
 
                     <div className="mt-8">
                         <Link to="/activity" className="text-lg max-sm:text-base"><i className="ri-cactus-line"></i> My Activity</Link>
+                        <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">View history as past activities.</p>
                     </div>
 
                     <button className="mt-8" onClick={open}>
@@ -36,11 +37,16 @@ function Settings() {
 
                     <div className="mt-8">
                         <p className="text-xl max-sm:text-base"><i className="ri-contract-up-down-line"></i> Fine tune</p>
-                        <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-6">80%</p>
+                        <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">80%</p>
+                    </div>
+
+                    <div className="mt-8">
+                        <a href="https://wa.me/254734720752" className="text-xl max-sm:text-base"><i className="ri-question-line"></i> Help</a>
+                        <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">Help center, contact us, privacy policy</p>
                     </div>
                 </div>
             </div>
-            <Dialog message={alert}/>
+            <Location_Dialog message={alert}/>
             <div className="lg:px-14 py-4">
                 <div className="">
                     <p className="text-lg text-blue-500">Legal information</p>
