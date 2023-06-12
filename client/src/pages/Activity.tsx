@@ -1,22 +1,37 @@
 // @flow strict
 
+import { useContext, useEffect, useState } from "react";
 import PageHeader from "../components/UI/PageHeader";
 import img from "/icons/assistance-72x72.png"
+import { dialog } from "../components/func";
+import { GlobalContext } from "../GlobalContext";
 function Activity() {
-    const history=[
+    const {db}=useContext(GlobalContext)
+    const [history,setHistory]=useState([
         {
-            index:1,
-            request:"Hey",
-            response:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet aut doloremque vitae quis minus accusamus minima. Quas dicta non beatae?"
-        },
-        {
-            index:2,
-            request:"Hello",
-            response:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet aut doloremque vitae quis minus accusamus minima. Quas dicta non beatae?"
-        }     
-    ]
+            index:0,
+            request:"No request",
+            response:"Nothing to see here... make a request first"
+        }
+    ])
     const val={
         title:"My activity"
+    }
+
+    function fetchFromIDB(){
+        const transaction=db.transaction("Chats","readwrite")
+        const store=transaction.objectStore("Chats")
+        const getAll=store.getAll()
+        getAll.onsuccess=()=>{
+            setHistory(getAll.result)
+        }
+        getAll.onerror=(event:any)=>{
+            console.log(event.target.result)
+            dialog.open()
+        }
+    }
+    window.onclick=()=>{
+        fetchFromIDB()
     }
     return (
         <div>
