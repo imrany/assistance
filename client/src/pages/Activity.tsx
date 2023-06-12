@@ -50,7 +50,7 @@ function Activity() {
     return (
         <div>
             <PageHeader val={val}/>
-            <div className="flex flex-col py-4 px-4">
+            <div className="flex flex-col pb-4 pt-20 px-4">
                 <div className="lg:px-14">
                     <div className="mb-12">
                         {history&&history.map(i=>(

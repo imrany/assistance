@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import { Link } from "react-router-dom";
-import {panel} from "../func";
+import {dialog, panel} from "../func";
 import img from "/icons/assistance-72x72.png"
+import Feedback_Dialog from "./Feedback_Dialog";
 // @flow strict
 function Nav() {
     const {path}=useContext(GlobalContext)
@@ -10,6 +11,10 @@ function Nav() {
         const panel=document.getElementById("panel") as HTMLDivElement
         panel.style.top="0"
     })
+    const send_feedback=()=>{
+        dialog.open()
+        panel.close()
+    }
     return (
         <header>
             <div className="flex justify-between pt-6 px-20 max-md:px-10">
@@ -32,8 +37,8 @@ function Nav() {
                     <li className="my-4" onClick={panel.close}>
                         <Link to="/help">Help</Link>
                     </li>
-                    <li className="my-4" onClick={panel.close}>
-                        <Link to="/send_feedback">Send Feedback</Link>
+                    <li className="my-4" onClick={send_feedback}>
+                        <p>Send Feedback</p>
                     </li>
                     <li className="my-4" onClick={panel.close}>
                         <Link to="">Privacy policy</Link>
@@ -43,6 +48,7 @@ function Nav() {
                     </li>
                 </ul>
             </div>
+            <Feedback_Dialog/>
         </header>
     );
 };

@@ -22,10 +22,10 @@ function Settings() {
         <div className="flex flex-col py-4 px-4">
             <PageHeader val={val}/>
             <div className="border-b-[1px]">
-                <div className="lg:px-14 pt-6 h-[80vh] lg:h-[95vh]">
+                <div className="lg:px-14 pt-20 h-[95vh] lg:h-[100vh]">
                     <div className="mb-8">
                         <p className="text-lg text-blue-500">Account</p>
-                        <p onClick={switch_account} className="text-xl max-sm:text-base">Switch account</p>
+                        <p onClick={switch_account} className="text-xl max-sm:text-base cursor-pointer">Switch account</p>
                         <p className="text-sm text-gray-400">Signed in as person@gmail.com</p>
                     </div>
 

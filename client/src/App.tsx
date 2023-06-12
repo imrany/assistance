@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { GlobalContext } from './GlobalContext'
 import Home from './pages/Home'
 import Fallback from './pages/Fallback'
-import Nav from './components/UI/Nav'
 import { status } from './components/status'
 import Notice from './components/UI/Notice'
 import Settings from './pages/Settings'
@@ -15,6 +14,7 @@ import Activity from './pages/Activity'
 import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
 import Help from './pages/Help'
+import App_info from './pages/App_info'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -47,7 +47,6 @@ function App() {
     <GlobalContext.Provider value={globalContent}>
       <Router>
         <Notice notice={status()}/>
-        <Nav/>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/auth/sign_in" element={<Sign_in/>}/>
@@ -55,6 +54,7 @@ function App() {
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/activity" element={<Activity/>}/>
             <Route path="/help" element={<Help/>}/>
+            <Route path="/app_info" element={<App_info/>}/>
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
             <Route path="*" element={<Fallback/>}/>
           </Routes>
