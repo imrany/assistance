@@ -8,6 +8,22 @@
     "theme_color":"#FFFF",
     "orientation":"portrait-primary",
     "display":"standalone",
+    "shortcuts":[
+      {
+        "name":"Settings",
+        "short_name":"Settings",
+        "description":"View your app settings",
+        "url":"/settings",
+        "icons":[
+          {
+            "src":"/icons/assistance-72x72.png",
+            "type":"image/png",
+            "sizes":"72x72",
+            "purpose": "any"
+          }
+        ]
+      }
+    ],
     "icons":[
       {
       "src":"/icons/assistance-72x72.png",
