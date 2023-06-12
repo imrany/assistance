@@ -19,7 +19,7 @@ function Settings() {
         <div className="flex flex-col py-4 px-4">
             <PageHeader val={val}/>
             <div className="border-b-[1px]">
-                <div className="lg:px-14 pt-6 h-[80vh]">
+                <div className="lg:px-14 pt-6 h-[80vh] lg:h-[95vh]">
                     <div className="mb-8">
                         <p className="text-lg text-blue-500">Account</p>
                         <p className="text-xl max-sm:text-base">Switch account</p>

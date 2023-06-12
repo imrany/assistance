@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import { Link } from "react-router-dom";
 import {panel} from "../func";
-
+import img from "/icons/assistance-72x72.png"
 // @flow strict
 function Nav() {
-    const {name, path}=useContext(GlobalContext)
+    const {path}=useContext(GlobalContext)
     window.document.addEventListener("scroll",()=>{
         const panel=document.getElementById("panel") as HTMLDivElement
         panel.style.top="0"
@@ -13,7 +13,9 @@ function Nav() {
     return (
         <header>
             <div className="flex justify-between pt-6 px-20 max-md:px-10">
-                <Link className="logo text-xl" to={path}>{name}</Link>
+                <Link className="logo text-xl" to={path}>
+                    <img src={img} className="w-[40px] h-[40px] rounded-lg"/>
+                </Link>
                 <div className="cursor-pointer" onClick={panel.open}>
                     <i className="ri-menu-3-fill ri-lg text-gray-500"></i>
                 </div>
