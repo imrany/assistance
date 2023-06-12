@@ -37,7 +37,7 @@ function Nav() {
                     <li className="my-4" onClick={panel.close}>
                         <Link to="/help">Help</Link>
                     </li>
-                    <li className="my-4" onClick={send_feedback}>
+                    <li className="my-4 cursor-pointer" onClick={send_feedback}>
                         <p>Send Feedback</p>
                     </li>
                     <li className="my-4" onClick={panel.close}>

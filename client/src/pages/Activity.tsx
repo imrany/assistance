@@ -52,14 +52,14 @@ function Activity() {
             <PageHeader val={val}/>
             <div className="flex flex-col pb-4 pt-20 px-4">
                 <div className="lg:px-14">
-                    <div className="mb-12">
+                    <div className="mb-16">
                         {history&&history.map(i=>(
                             <div className="my-6 border-b-[1px] pb-4" key={i.index}>
                                 <div className="flex">
                                     <img src={img} className="w-[40px] h-[40px] rounded-lg"/>
                                     <p className="text-gray-500 text-base ml-4 mt-2">Assistance</p>
                                 </div>
-                                <p className="text-base my-3">Said <span className="text-blue-500">{i.request}</span></p>
+                                <p className="text-base my-3"><i className="ri-search-line"></i> <span className="text-blue-500">{i.request}</span></p>
                                 <p className="text-sm w-fit text-gray-600">{i.response}</p>
                                 <div className="flex mt-6 text-gray-500">
                                     <p className="text-sm">{i.time}</p>

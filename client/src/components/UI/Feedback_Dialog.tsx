@@ -22,7 +22,7 @@ function Feedback_Dialog() {
                 <p className="text-[11px] text-gray-400">Send feedback as <span className="font-semibold text-gray-700">person@gmail.com</span> <i className="ri-edit-line"></i></p>
 
                 <div className="flex justify-center mt-6">
-                    <button className="bg-blue-500 text-white border-none px-4 py-2 text-xs rounded-2xl cursor-pointer" onClick={$continue}>Continue to email</button>
+                    <button className="bg-blue-500 text-white border-none px-4 max-sm:w-[70vw] max-sm:font-semibold py-2 text-xs rounded-2xl cursor-pointer" onClick={$continue}>Continue to email</button>
                 </div>
             </div>
         </dialog>
