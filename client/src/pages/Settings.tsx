@@ -1,5 +1,5 @@
 // @flow strict
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PageHeader from "../components/UI/PageHeader";
 import { dialog } from "../components/func";
 import { useState } from "react";
@@ -7,12 +7,16 @@ import Location_Dialog from "../components/UI/Location_Dialog";
 
 function Settings() {
     const [alert,setAlert]=useState("")
+    const navigate=useNavigate()
     const val={
         title:"Settings"
     }
     const open=()=>{
         dialog.open()
         setAlert("Turn on your location")
+    }
+    const switch_account=()=>{
+        navigate("/auth/sign_in")
     }
     return (
         <div className="flex flex-col py-4 px-4">
@@ -21,7 +25,7 @@ function Settings() {
                 <div className="lg:px-14 pt-6 h-[80vh] lg:h-[95vh]">
                     <div className="mb-8">
                         <p className="text-lg text-blue-500">Account</p>
-                        <p className="text-xl max-sm:text-base">Switch account</p>
+                        <p onClick={switch_account} className="text-xl max-sm:text-base">Switch account</p>
                         <p className="text-sm text-gray-400">Signed in as person@gmail.com</p>
                     </div>
 

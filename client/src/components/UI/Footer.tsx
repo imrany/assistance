@@ -8,7 +8,7 @@ function Footer() {
         const input=document.getElementById("show-input") as HTMLDivElement
         footer.classList.add("close")
         input.style.bottom="0"
-        navigate("/get_started")
+        navigate("/auth/sign_in")
     }
     return (
         <footer className="fixed bottom-0 left-0 right-0 text-white bg-blue-600 flex justify-between py-5 px-20 max-md:px-4">

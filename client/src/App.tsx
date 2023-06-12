@@ -12,6 +12,9 @@ import { loader } from './components/preloader'
 import Footer from './components/UI/Footer'
 import { dialog } from './components/func'
 import Activity from './pages/Activity'
+import Sign_in from './pages/Sign_in'
+import Sign_up from './pages/Sign_up'
+import Help from './pages/Help'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -47,8 +50,11 @@ function App() {
         <Nav/>
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/auth/sign_in" element={<Sign_in/>}/>
+            <Route path="/auth/sign_up" element={<Sign_up/>}/>
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/activity" element={<Activity/>}/>
+            <Route path="/help" element={<Help/>}/>
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
             <Route path="*" element={<Fallback/>}/>
           </Routes>
