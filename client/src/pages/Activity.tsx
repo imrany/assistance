@@ -5,7 +5,7 @@ import PageHeader from "../components/UI/PageHeader";
 import img from "/icons/assistance-72x72.png"
 import { dialog } from "../components/func";
 import { GlobalContext } from "../GlobalContext";
-import Delete_Dialog from "../components/UI/Location_Dialog";
+import Delete_Dialog from "../components/UI/Delete_Dialog";
 function Activity() {
     const {db}=useContext(GlobalContext)
     const [history,setHistory]=useState([

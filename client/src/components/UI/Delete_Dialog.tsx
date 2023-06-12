@@ -9,7 +9,7 @@ type Props={
         index:any
     }
 }
-function Location_Dialog(prop:Props) {
+function Delete_Dialog(prop:Props) {
     const {db}=useContext(GlobalContext)
     const delete_from_db=()=>{
         const transaction=db.transaction("Chats","readwrite")
@@ -40,4 +40,4 @@ function Location_Dialog(prop:Props) {
     );
 };
 
-export default Location_Dialog;
+export default Delete_Dialog;
