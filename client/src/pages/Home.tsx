@@ -2,7 +2,7 @@
 import { dialog, panel, scroll_bottom } from "../components/func";
 import { Data, DataAdded } from "../types/types";
 import Window from "../components/UI/Window";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { GlobalContext } from "../GlobalContext";
 import { loader } from "../components/preloader";
 import Dialog from "../components/UI/Dialog";
@@ -86,10 +86,11 @@ function Home() {
         }
         setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },[])
-
+    
     window.onclick=()=>{
         fetchFromIDB()
     }
+   
     // setTimeout(()=>{
     //     fetchFromIDB();
     // },10)
