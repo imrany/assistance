@@ -41,7 +41,7 @@ function Activity() {
     const delete_history=(index:any)=>{
         dialog.open()
         setAlert({
-            text:`Do you want to delete this? ${index}`,
+            text:`You are about to delete this?`,
             index
         })
         return index
