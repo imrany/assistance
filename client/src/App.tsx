@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
 import Footer from './components/UI/Footer'
 import { dialog } from './components/func'
+import Activity from './pages/Activity'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -47,6 +48,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/settings" element={<Settings/>}/>
+            <Route path="/activity" element={<Activity/>}/>
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
             <Route path="*" element={<Fallback/>}/>
           </Routes>
