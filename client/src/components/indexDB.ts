@@ -17,6 +17,7 @@ request.onupgradeneeded = (event:any) => {
     objectStore.createIndex("index", ["index"], { unique: true });
     objectStore.createIndex("request", ["request"], { unique: false });
     objectStore.createIndex("response", ["response"], { unique: false });
+    objectStore.createIndex("time", ["time"], { unique: false });
 };
 
 export{
