@@ -6,7 +6,6 @@ function modal(input:string):string{
   // Create and configure the NaiveBayes classifier
   const classifier = new natural.BayesClassifier();
 
-
   // Train the NaiveBayes classifier
   trainingData.forEach(data => classifier.addDocument(data.request, data.response));
   classifier.train();

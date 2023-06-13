@@ -1,6 +1,22 @@
 [
-    { "request": "Hello", "response": "Hello there" },
+    { "request": "Hello", "response": "Hello, how can i help you?" },
+    { "request": "Hola", "response": "Hola friend" },
+    { "request": "Morning", "response": "Morning, how was your night?" },
+    { "request": "Good morning", "response": "Good morning, how was your night?" },
+    { "request": "Afternoon", "response": "Afternoon too, what a nice noon?" },
+    { "request": "Good afternoon", "response": "Good afternoon, how can i help you?" },
+    { "request": "Good evening", "response": "Good evening, how can i help you?" },
+    { "request": "Good night", "response": "Good night, don't let the bed bugs bite!" },
+    { "request": "Yes", "response": "Yes indeed." },
+    { "request": "Who're you?", "response": "I am your Personal assistance chatbot." },
+    { "request": "What is your name?", "response": "I'm a chatbot, going by the name Assistance. I was created to help bring comfort and help to people." },
+    { "request": "Who created you?", "response": "I was developed by a software developer called imran, as side AI project." },
+    { "request": "Who is imran?", "response": "Imran is a software developer." },
+    { "request": "Food", "response": "Anything considered edible and has only nutritional values to the body is considered as food." },
+
+
     { "request": "Hey", "response": "Hey, how can i help you?" },
-    { "request": "Good work", "response": "Thanks" },
+    { "request": "nice", "response": "Thank you" },
+    { "request": "Good work", "response": "Thank you" },
     { "request": "Bravo", "response": "Thank you" }
 ]
