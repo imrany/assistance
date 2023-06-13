@@ -1,20 +1,36 @@
 // @flow strict
 
+import { useNavigate } from "react-router-dom";
 import { dialog } from "../func";
 
 function Switch_Dialog() {
+    const navigate=useNavigate()
+    const add_account=()=>{
+        navigate('/auth/sign_up')
+        dialog.switch_close()
+    }
     return (
-        <dialog id="d" className="shadow-lg rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw] pb-6 h-fit max-sm:scale-[0.9]">
-            <button onClick={dialog.close} className="ml-[auto]">
+        <dialog id="s" className="shadow-lg rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw] pb-6 h-fit max-sm:scale-[0.9]">
+            <button onClick={dialog.switch_close} className="ml-[auto]">
                 <i className="ri-close-fill ri-lg"></i>
             </button>
-            <div className="text-center">
-                <p className="text-2xl  max-sm:text-lg my-2">An error has occurred</p>
-                <p className="text-sm max-sm:text-xs text-gray-400 lg:w-[300px]">
-                    {/* {prop.message} */}
-                </p>
-                <div className="flex justify-center mt-4">
-                    <button className="bg-white border text-blue-500 px-4 py-2 text-xs rounded-md" onClick={dialog.close}>Close</button>
+            <div className="flex flex-col">
+                <div className="flex">
+                    <i className="ri-user-fill bg-green-500 h-8 w-8 text-center pt-1 mr-4 rounded-[50px]"></i>
+                    <div className="flex flex-col">
+                        <p className="text-base font-semibold text-gray-800">
+                            John Doe
+                        </p>
+                        <p className="text-xs text-gray-400">
+                            johndoe@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div className="flex justify-around mt-4">
+                    <button className="text-gray-500 px-4 text-sm w-full rounded-md" onClick={add_account}>
+                        <i className="ri-add-fill ri-lg mr-2 -mb-10"></i>
+                        Add account
+                    </button>
                 </div>
             </div>
         </dialog>

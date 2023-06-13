@@ -17,7 +17,7 @@ function Settings() {
         setAlert("Turn on your location")
     }
     const switch_account=()=>{
-        dialog.open()
+        dialog.switch_open()
     }
     return (
         <div className="flex flex-col py-4 px-4">

@@ -9,7 +9,7 @@ function Help() {
     return (
         <div>
             <PageHeader val={val}/>
-            <div className="flex flex-col pb-4 h-[80vh] lg:h-[95vh]">
+            <div className="flex flex-col pb-4 h-[80vh] lg:h-[95vh]  pt-[65px]">
                 <a href="mailto:imranmat254@gmail.com">
                     <div className="py-4 border-b-[1px] hover:bg-gray-200 cursor-pointer">
                         <div className="lg:px-14 px-4">

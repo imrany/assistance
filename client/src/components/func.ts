@@ -25,6 +25,14 @@ const dialog={
     feedback_open(){
         const d=document.getElementById("f") as HTMLDialogElement
         d.showModal()
+    },
+    switch_close(){
+        const d=document.getElementById("s") as HTMLDialogElement
+        d.close()
+    },
+    switch_open(){
+        const d=document.getElementById("s") as HTMLDialogElement
+        d.showModal()
     }
 }
 
