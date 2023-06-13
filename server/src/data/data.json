@@ -1,4 +1,5 @@
 [
+    { "request": "", "response": "Cannot generate a valid response. Find out from other sources..." },
     { "request": "Hello", "response": "Hello, how can i help you?" },
     { "request": "Hola", "response": "Hola friend" },
     { "request": "Morning", "response": "Morning, how was your night?" },
@@ -9,14 +10,15 @@
     { "request": "Good night", "response": "Good night, don't let the bed bugs bite!" },
     { "request": "Yes", "response": "Yes indeed." },
     { "request": "Who're you?", "response": "I am your Personal assistance chatbot." },
-    { "request": "What is your name?", "response": "I'm a chatbot, going by the name Assistance. I was created to help bring comfort and help to people." },
+    { "request": "What is your name?", "response": "I'm a chatbot, going by the name Assistance. I was created to help and bring comfort and help to people." },
     { "request": "Who created you?", "response": "I was developed by a software developer called imran, as side AI project." },
     { "request": "Who is imran?", "response": "Imran is a software developer." },
+    { "request": "Who is a software developer", "response": "A software developer is a person who develops softwares following certain rules." },
     { "request": "Food", "response": "Anything considered edible and has only nutritional values to the body is considered as food." },
 
 
     { "request": "Hey", "response": "Hey, how can i help you?" },
-    { "request": "nice", "response": "Thank you" },
+    { "request": "nice", "response": "Thanks" },
     { "request": "Good work", "response": "Thank you" },
     { "request": "Bravo", "response": "Thank you" }
 ]

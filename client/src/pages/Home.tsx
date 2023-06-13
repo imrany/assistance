@@ -43,14 +43,15 @@ function Home() {
     }
     
     let date=new Date()
-    let time=date.getHours()>12?`${date.getHours()}:${date.getMinutes()} pm`:`${date.getHours()}:${date.getMinutes()} am`
+    let min=date.getMinutes()<10?`0${date.getMinutes()}`:date.getMinutes()
+    let time=date.getHours()>12?`${date.getHours()}:${min} pm`:`${date.getHours()}:${date.getMinutes()} am`
 
     const handleSubmit=async(e:any)=>{
         e.preventDefault()
         loader.on()
         try {
             const req:string=e.target.request.value
-            let url=` http://192.168.0.118:5000/api/chat`
+            let url=` http://192.168.43.172:5000/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
@@ -65,6 +66,7 @@ function Home() {
                 index:parRes.index,
                 request: req,
                 response: parRes.response,
+                more:parRes.more,
                 time:time
             })
             fetchFromIDB();

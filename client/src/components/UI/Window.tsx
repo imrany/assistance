@@ -14,6 +14,9 @@ function Window(prop:Props) {
 
                     <div className="border-[1px] px-4 py-2 rounded-[20px] w-fit h-fit">
                         <p className='text-base max-sm:text-sm text-center' title="AI's response">{i.response}</p>
+                        <div className="mt-4 mb-2 py-1 px-2 rounded-[30px] bg-gray-200 text-gray-600 text-sm  w-fit text-center  hover:bg-gray-800 hover:text-stone-100">
+                            <a href={i.more} target="_blank" rel="noopener noreferrer">Other sources</a>
+                        </div>
                     </div>
                 </div>
             ))}

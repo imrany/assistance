@@ -8,7 +8,8 @@ router.post("/chat",async(req:any,res:any)=>{
     try {
         const {request}=req.body
         const response=modal(request)
-        res.status(200).send({response:response,index:index})
+        const more_about_it=`https://www.google.com/search?q=${request}`
+        res.status(200).send({response:response,index:index, more:more_about_it})
     } catch (error:any) {
         res.status(500).send({error:error.message})
     }

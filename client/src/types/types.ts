@@ -17,7 +17,8 @@ interface Err{
 
 type Data={
     request:string,
-    response:string
+    response:string,
+    more:string
 }[]
 
 type Status={
@@ -33,6 +34,7 @@ type DataAdded={
     index:number,
     request:string,
     response:string,
+    more:string,
     time:string
 }
 

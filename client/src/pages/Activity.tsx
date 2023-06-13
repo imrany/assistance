@@ -13,6 +13,7 @@ function Activity() {
             index:0,
             request:"No request",
             response:"Nothing to see here... make a request first",
+            more:"",
             time:''
         }
     ])
@@ -61,6 +62,9 @@ function Activity() {
                                 </div>
                                 <p className="text-base my-3"><i className="ri-search-eye-line"></i> <span className="text-blue-500">{i.request}</span></p>
                                 <p className="text-sm w-fit text-gray-600">{i.response}</p>
+                                <div className="mt-4 text-gray-500 text-sm py-1 px-2 rounded-[30px] bg-gray-200 w-fit hover:bg-gray-800 hover:text-stone-100">
+                                    <a href={i.more} target="_blank" rel="noopener noreferrer">Other sources</a>
+                                </div>
                                 <div className="flex mt-6 text-gray-500">
                                     <p className="text-sm">{i.time}</p>
                                     <i className="ri-sm ri-map-pin-fill mx-2"></i>

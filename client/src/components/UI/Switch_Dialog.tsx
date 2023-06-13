@@ -16,7 +16,7 @@ function Switch_Dialog() {
             </button>
             <div className="flex flex-col">
                 <div className="flex">
-                    <i className="ri-user-fill bg-green-500 h-8 w-8 text-center pt-1 mr-4 rounded-[50px]"></i>
+                    <i className="ri-user-fill bg-green-500 h-8 w-8 text-center pt-1 text-gray-100 mr-4 rounded-[50px]"></i>
                     <div className="flex flex-col">
                         <p className="text-base font-semibold text-gray-800">
                             John Doe
