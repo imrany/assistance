@@ -15,29 +15,9 @@ import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
 import Help from './pages/Help'
 import App_info from './pages/App_info'
-import { Data } from './types/types'
 
 function App() {
-  let data:Data=[]
   const [db,setDB]=useState<any>(null)
-
-  function fetchFromIDB(){
-    const transaction=db.transaction("Chats","readwrite")
-    const store=transaction.objectStore("Chats")
-    const getAll=store.getAll()
-    getAll.onsuccess=()=>{
-        data=getAll.result
-    }
-    getAll.onerror=(event:any)=>{
-        console.log(event.target.result)
-        dialog.open()
-    }
-  }
-
-  window.onclick=()=>{
-    fetchFromIDB()
-  }
-
   function initDB(){
     loader.on()
     request.onsuccess=(event:any)=>{
@@ -68,7 +48,7 @@ function App() {
       <Router>
         <Notice notice={status()}/>
           <Routes>
-            <Route path="/" element={<Home data={data}/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/auth/sign_in" element={<Sign_in/>}/>
             <Route path="/auth/sign_up" element={<Sign_up/>}/>
             <Route path="/settings" element={<Settings/>}/>
