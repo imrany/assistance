@@ -9,7 +9,7 @@ function Feedback_Dialog() {
     return (
         <dialog id="f" className="shadow-lg max-sm:rounded-t-[30px] rounded-xl justify-center items-center flex flex-col max-sm:w-[83vw] pb-10 h-fit max-sm:-mb-[0]">
             <button onClick={dialog.feedback_close} className="ml-[auto]">
-                <i className="ri-close-fill ri-lg"></i>
+                <i className="ri-close-fill ri-lg hover:text-blue-500"></i>
             </button>
             <p className="text-2xl  max-sm:text-sm font-semibold my-4">Send feedback to Assistance</p>
             <div className="px-2 md:text-center">

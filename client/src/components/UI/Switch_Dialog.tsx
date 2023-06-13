@@ -12,7 +12,7 @@ function Switch_Dialog() {
     return (
         <dialog id="s" className="shadow-lg rounded-md justify-center items-center flex flex-col lg:w-[35vw] max-md:w-[80vw] max-sm:w-[75vw] pb-6 h-fit max-sm:scale-[0.9]">
             <button onClick={dialog.switch_close} className="ml-[auto]">
-                <i className="ri-close-fill ri-lg"></i>
+                <i className="ri-close-fill ri-lg hover:text-blue-500"></i>
             </button>
             <div className="flex flex-col">
                 <div className="flex">
