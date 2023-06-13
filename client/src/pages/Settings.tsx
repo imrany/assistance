@@ -1,5 +1,5 @@
 // @flow strict
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PageHeader from "../components/UI/PageHeader";
 import { dialog } from "../components/func";
 import { useState } from "react";
@@ -8,7 +8,6 @@ import Switch_Dialog from "../components/UI/Switch_Dialog";
 
 function Settings() {
     const [alert,setAlert]=useState("")
-    const navigate=useNavigate()
     const val={
         title:"Settings"
     }
