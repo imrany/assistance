@@ -7,8 +7,8 @@ function Feedback_Dialog() {
         window.location.href="mailto:imranmat254@gmail.com"
     }
     return (
-        <dialog id="d" className="shadow-lg max-sm:rounded-t-[30px] rounded-xl justify-center items-center flex flex-col max-sm:w-[100vw] pb-10 h-fit max-sm:-mb-[0]">
-            <button onClick={dialog.close} className="ml-[auto]">
+        <dialog id="f" className="shadow-lg max-sm:rounded-t-[30px] rounded-xl justify-center items-center flex flex-col max-sm:w-[83vw] pb-10 h-fit max-sm:-mb-[0]">
+            <button onClick={dialog.feedback_close} className="ml-[auto]">
                 <i className="ri-close-fill ri-lg"></i>
             </button>
             <p className="text-2xl  max-sm:text-sm font-semibold my-4">Send feedback to Assistance</p>

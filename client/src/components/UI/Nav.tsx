@@ -12,7 +12,7 @@ function Nav() {
         panel.style.top="0"
     })
     const send_feedback=()=>{
-        dialog.open()
+        dialog.feedback_open()
         panel.close()
     }
     return (
