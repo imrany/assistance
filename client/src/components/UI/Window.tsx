@@ -13,7 +13,9 @@ function Window(prop:Props) {
                     </div>
 
                     <div className="border-[1px] px-4 py-2 rounded-[20px] w-fit h-fit">
-                        <p className='text-base max-sm:text-sm text-center' title="AI's response">{i.response}</p>
+                        {!i.response.includes("Hello")?
+                            <p className='text-base max-sm:text-sm text-center' title="AI's response">{i.response}</p>
+                        :<p className='text-base max-sm:text-sm  text-red-600'>Cannot generate a valid response. Find out from other sources...</p>}
                         <div className="mt-4 mb-2 py-1 px-2 rounded-[30px] bg-gray-200 text-gray-600 text-sm  w-fit text-center  hover:bg-gray-800 hover:text-stone-100">
                             <a href={i.more} target="_blank" rel="noopener noreferrer">Other sources</a>
                         </div>

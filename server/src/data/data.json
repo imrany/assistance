@@ -1,5 +1,4 @@
 [
-    { "request": "", "response": "Cannot generate a valid response. Find out from other sources..." },
     { "request": "Hello", "response": "Hello, how can i help you?" },
     { "request": "Hola", "response": "Hola friend" },
     { "request": "Morning", "response": "Morning, how was your night?" },
@@ -18,7 +17,5 @@
 
 
     { "request": "Hey", "response": "Hey, how can i help you?" },
-    { "request": "nice", "response": "Thanks" },
-    { "request": "Good work", "response": "Thank you" },
-    { "request": "Bravo", "response": "Thank you" }
+    { "request": "nice", "response": "Thanks" }
 ]
