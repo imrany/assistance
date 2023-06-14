@@ -1,15 +1,12 @@
-import Nav from "../components/UI/Nav";
 import { panel } from "../components/func";
 
 // @flow strict
 function Notfound() {
     return (
         <>
-            <Nav/>
-            <div className='flex flex-col h-[75vh] justify-center items-center' onClick={panel.close}>
-                <div className="border-[1px] px-3 py-3 rounded-[20px] max-md:w-[90vw]">
-                        <p className='text-base max-sm:text-sm text-center'>Oops! Currently you cannot view this page.</p>
-                </div>
+            <div className='flex flex-col h-[100vh] justify-center items-center' onClick={panel.close}>
+                <p className="text-5xl mb-2 text-gray-700 font-semibold text-center">404</p>
+                <p className='text-lg text-gray-600 max-sm:text-sm text-center'>This page does not exit.</p>
             </div>
         </>
     );
