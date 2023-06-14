@@ -1,11 +1,5 @@
 import { Err, geoPostion } from "./types/types.js"
 
-if('serviceWorker' in navigator){
-    navigator.serviceWorker.register("./sw.ts")
-    .then(()=>console.log('sw registered'))
-    .catch((err)=>console.log('sw not registerd', err))
-}
-
 const successCallback=(position:geoPostion)=>{
     const {latitude, longitude}= position.coords;
     console.log(latitude,longitude)
