@@ -4,23 +4,9 @@ const dynamicCache = 'site-dynamic';
 const assets = [
     '/',
     '/index.html',
-    '/index.css',
-    '/pages/Fallback.html',
-    '/index.js',
-    '/notifications/index.js',
-    '/firebase/index.js',
-    '/db/index.js',
-    '/auth/index.js',
-    '/types/types.js',
-    '/manifest.json',
-    '/img/anubis.jpg',
-    '/img/comp.jpg',
-    '/img/comp2.jpg',
-    '/img/desk_top.jpg',
-    '/img/mail.png',
-    '/img/medical.png',
-    '/img/server.jpg',
-    '/img/type.jpeg'
+    '/assets',
+    '/fallback.html',
+    '/manifest.json'
 ]
 
 //installing service worker
@@ -67,7 +53,7 @@ self.addEventListener('fetch', (evt) => {
             })
         }).catch(() => {
             if (evt.request.url.indexOf('.html') > -1) {
-                return caches.match('/fallback');
+                return caches.match('fallback.html');
             }
         })
     )

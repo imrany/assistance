@@ -15,6 +15,7 @@ import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
 import Help from './pages/Help'
 import App_info from './pages/App_info'
+import Notfound from './pages/Notfound'
 
 function App() {
   const [db,setDB]=useState<any>(null)
@@ -55,8 +56,9 @@ function App() {
             <Route path="/activity" element={<Activity/>}/>
             <Route path="/help" element={<Help/>}/>
             <Route path="/app_info" element={<App_info/>}/>
+            <Route path="/fallback" element={<Fallback/>}/>
             {/* <Route path="/settings" element={status().value?<Settings/>:<Fallback/>}/> */}
-            <Route path="*" element={<Fallback/>}/>
+            <Route path="*" element={<Notfound/>}/>
           </Routes>
         <Footer/>
       </Router>
