@@ -89,11 +89,17 @@ function Home() {
         }
         setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },[])
+    if(db===null){
+       console.log(db)
+    }else{
+        window.onload=()=>{
+            fetchFromIDB()
+        }
+    }
     
     window.onclick=()=>{
         fetchFromIDB()
     }
-   
     // setTimeout(()=>{
     //     fetchFromIDB();
     // },10)
