@@ -16,7 +16,7 @@
         "url":"https://assistance-six.vercel.app/",
         "icons":[
           {
-            "src":"/shortcut-icons/chat.png",
+            "src":"/icons/shortcuts/chat.png",
             "type":"image/png",
             "sizes":"72x72",
             "purpose": "any"
@@ -30,7 +30,7 @@
         "url":"https://assistance-six.vercel.app/settings",
         "icons":[
           {
-            "src":"/shortcut-icons/setting.png",
+            "src":"/icons/shortcuts/setting.png",
             "type":"image/png",
             "sizes":"72x72",
             "purpose": "any"
@@ -44,7 +44,7 @@
         "url":"https://assistance-six.vercel.app/activity",
         "icons":[
           {
-            "src":"/shortcut-icons/history.png",
+            "src":"/icons/shortcuts/history.png",
             "type":"image/png",
             "sizes":"72x72",
             "purpose": "any"
