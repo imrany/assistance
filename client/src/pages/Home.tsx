@@ -51,7 +51,7 @@ function Home() {
         loader.on()
         try {
             const req:string=e.target.request.value
-            let url=` http://192.168.43.172:5000/api/chat`
+            let url=` https://assistance-server.onrender.com/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
