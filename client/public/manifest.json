@@ -10,13 +10,41 @@
     "display":"standalone",
     "shortcuts":[
       {
+        "name":"Chat",
+        "short_name":"Chat",
+        "description":"Start a chat with assistance chat bot.",
+        "url":"https://assistance-six.vercel.app/",
+        "icons":[
+          {
+            "src":"/shortcut-icons/chat.png",
+            "type":"image/png",
+            "sizes":"72x72",
+            "purpose": "any"
+          }
+        ]
+      },
+      {
         "name":"Settings",
         "short_name":"Settings",
         "description":"View your app settings",
-        "url":"/settings",
+        "url":"https://assistance-six.vercel.app/settings",
         "icons":[
           {
-            "src":"/icons/assistance-72x72.png",
+            "src":"/shortcut-icons/setting.png",
+            "type":"image/png",
+            "sizes":"72x72",
+            "purpose": "any"
+          }
+        ]
+      },
+      {
+        "name":"My activity",
+        "short_name":"My activity",
+        "description":"View chat history",
+        "url":"https://assistance-six.vercel.app/activity",
+        "icons":[
+          {
+            "src":"/shortcut-icons/history.png",
             "type":"image/png",
             "sizes":"72x72",
             "purpose": "any"
