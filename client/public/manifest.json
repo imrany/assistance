@@ -13,7 +13,7 @@
         "name":"Chat",
         "short_name":"Chat",
         "description":"Start a chat with assistance chat bot.",
-        "url":"https://assistance-six.vercel.app/",
+        "url":"/",
         "icons":[
           {
             "src":"/icons/shortcuts/chat.png",
@@ -27,7 +27,7 @@
         "name":"Settings",
         "short_name":"Settings",
         "description":"View your app settings",
-        "url":"https://assistance-six.vercel.app/settings",
+        "url":"/settings",
         "icons":[
           {
             "src":"/icons/shortcuts/setting.png",
@@ -41,7 +41,7 @@
         "name":"My activity",
         "short_name":"My activity",
         "description":"View chat history",
-        "url":"https://assistance-six.vercel.app/activity",
+        "url":"/activity",
         "icons":[
           {
             "src":"/icons/shortcuts/history.png",

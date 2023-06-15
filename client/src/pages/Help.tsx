@@ -28,11 +28,20 @@ function Help() {
                     </div>
                 </a>
 
+                <Link to="/software_updates">
+                    <div className="py-4 border-b-[1px] hover:bg-gray-200 cursor-pointer">
+                        <div className="lg:px-14 px-4">
+                            <p className="text-lg max-sm:text-base"><i className="ri-settings-line"></i> Software updates</p>
+                            <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">Software versions and updates.</p>
+                        </div>
+                    </div>
+                </Link>
+
                 <Link to="/app_info">
                     <div className="py-4 border-b-[1px] hover:bg-gray-200 cursor-pointer">
                         <div className="lg:px-14 px-4">
                             <p className="text-lg max-sm:text-base"><i className="ri-information-line"></i> App info</p>
-                            <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">Software versions and updates.</p>
+                            <p className="text-sm text-gray-400 max-md:text-base max-sm:text-sm ml-5">More about assistance.</p>
                         </div>
                     </div>
                 </Link>

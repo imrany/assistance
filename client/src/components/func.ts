@@ -44,9 +44,19 @@ const scroll_bottom=()=>{
     window_bottom.scrollIntoView()
 }
 
+//clear cache function as update'
+const update_app = (name:string) => {
+    caches.delete(name).then((m:any)=>{
+        console.log(m)
+    }).catch((err:any)=>{
+        console.log(err)
+    })
+}
+
 export{
     panel,
     dialog,
     reload,
-    scroll_bottom
+    scroll_bottom,
+    update_app
 }

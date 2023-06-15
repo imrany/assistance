@@ -51,7 +51,7 @@ function Home() {
         loader.on()
         try {
             const req:string=e.target.request.value
-            let url=` https://assistance-server.onrender.com/api/chat`
+            let url=`https://assistance-server.onrender.com/api/chat`
             const response=await fetch(url,{
                 method:"POST",
                 headers:{
