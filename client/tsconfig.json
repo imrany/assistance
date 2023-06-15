@@ -19,6 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "public/sw.js"],
+  "include": ["src", "public/sw.js", "public/indexDB.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
