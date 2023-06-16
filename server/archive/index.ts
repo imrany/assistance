@@ -1,15 +1,9 @@
 import csv from "csvtojson"
 import { readFile, writeFile } from "fs"
-const csv_file_path=`${__dirname}/S10_question_answer_pairs.csv`
-let output_file=`${__dirname}/final.csv`
+const csv_file_path=`${__dirname}/S10_question_answer_pairs.txt`
+let output_file=`${__dirname}/data/final.csv`
 
-// csv()
-//     .fromFile(csv_file_path)
-//     .then((jsonObj)=>{
-//         console.log(jsonObj)
-//     })
-
-const change_tocsv_format=()=>{
+const txt_to_csv=()=>{
     readFile(output_file,"utf8",(err:any,data:any)=>{
         let new_data=data.split("    ").join(",")
         writeFile(output_file,new_data,()=>{
@@ -23,9 +17,14 @@ const read_file=()=>{
         let new_data=data.split("	").join("    ")
         writeFile(output_file,new_data,()=>{
             console.log('spacing changed')
-            change_tocsv_format()
+            txt_to_csv()
         })
     })
 }
 
 read_file()
+// csv()
+//     .fromFile(csv_file_path)
+//     .then((jsonObj)=>{
+//         console.log(jsonObj)
+//     })
