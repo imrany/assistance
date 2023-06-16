@@ -9,7 +9,7 @@ let str="hello  string  and people"
 //     })
 
 const replace=()=>{
-   let new_str= str.replace(/ /g,",")
+   let new_str= str.replace(/  /g,",")
    console.log(new_str)
 }
 
@@ -17,4 +17,4 @@ const split=()=>{
     let new_str= str.split("  ").join("+")
    console.log(new_str)
 }
-split()
+replace()
