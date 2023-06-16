@@ -56,15 +56,10 @@ function Software_updates() {
                 ):(
                     <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
                         <p className="text-xl max-sm:text-base">Update</p>
-                       {status().text==="Back online"?
-                         <p className="text-sm text-gray-500">Turn on mobile data or WIFI to fetch the recent updates</p>:(
-                           <p className="text-sm text-gray-500">
-                                {/* {version===""?
-                                <span>No server side connection</span>:( */}
-                                    <span>Updated to {version}</span>
-                                {/* )} */}
-                           </p>
-                        )}
+                        <p className="text-sm text-gray-500">{version===""?
+                        <span>Turn on mobile data or WIFI to fetch the recent updates</span>:(
+                            <span>Updated to {version}</span>
+                        )}</p>
                     </div>
                 )}
                 <a href="../../LICENSE" download="MIT License" className="hover:bg-gray-200 px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer">
