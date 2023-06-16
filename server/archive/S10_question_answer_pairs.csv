@@ -1,4 +1,4 @@
-ArticleTitle	Question	Answer	DifficultyFromQuestioner	DifficultyFromAnswerer	ArticleFile
+ArticleTitle    Question	Answer	DifficultyFromQuestioner	DifficultyFromAnswerer	ArticleFile
 Alessandro_Volta	Was Alessandro Volta a professor of chemistry?	Alessandro Volta was not a professor of chemistry.	easy	easy	S10_set4_a10
 Alessandro_Volta	Was Alessandro Volta a professor of chemistry?	No	easy	hard	S10_set4_a10
 Alessandro_Volta	Did Alessandro Volta invent the remotely operated pistol?	Alessandro Volta did invent the remotely operated pistol.	easy	easy	S10_set4_a10
@@ -6,7 +6,7 @@ Alessandro_Volta	Did Alessandro Volta invent the remotely operated pistol?	Yes	e
 Alessandro_Volta	Was Alessandro Volta taught in public schools?	Volta was taught in public schools.	easy	easy	S10_set4_a10
 Alessandro_Volta	Was Alessandro Volta taught in public schools?	Yes	easy	easy	S10_set4_a10
 Alessandro_V:lta	What did Alessandro Volta invent in 1800?	voltaic pile	medium	medium	S10_set4_a10
-Alessandro_Volta	What is the battery made by Alessandro Volta credited as?	The battery made by Volta is credited as the first electrochemical cell.	medium	medium	S10_set4_a10
+Alessandro_Volta    What is the battery made by Alessandro Volta credited as?	The battery made by Volta is credited as the first electrochemical cell.	medium	medium	S10_set4_a10
 Alessandro_Volta	What is the battery made by Alessandro Volta credited as?	the first electrochemical cell	medium	medium	S10_set4_a10
 Alessandro_Volta	Did Alessandro Volta die and retire in the same place?	Alessandro Volta retired and died in the same place.	hard	hard	S10_set4_a10
 Alessandro_Volta	Did Alessandro Volta die and retire in the same place?	Yes	hard	hard	S10_set4_a10

@@ -12,7 +12,8 @@ let str="hello  string  and people"
 const read_file=()=>{
     readFile(csv_file_path,"utf8",(err:any,data:any)=>{
         // Display the file content
-        console.log(data);
+        let new_data=data.split("    ").join(",")
+        console.log(new_data);
     })
 }
 
