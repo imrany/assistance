@@ -8,13 +8,9 @@ let str="hello  string  and people"
 //         console.log(jsonObj)
 //     })
 
-const replace=()=>{
-   let new_str= str.replace(/  /g,",")
-   console.log(new_str)
-}
 
-const split=()=>{
+const split=(str:any)=>{
     let new_str= str.split("  ").join("+")
    console.log(new_str)
 }
-replace()
+split(csv_file_path)
