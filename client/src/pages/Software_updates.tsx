@@ -1,21 +1,18 @@
 // @flow strict
 
 import PageHeader from "../components/UI/PageHeader";
-import { update_app } from "../components/func";
+import Update_Dialog from "../components/UI/Update_Dialog";
+import { dialog } from "../components/func";
 import { status } from "../components/status";
 
 function Software_updates() {
-    let version="1.0.0"
-    const update=()=>{
-        // "site-static"
-        update_app("site-dynamic")
-        setTimeout(()=>{
-            window.location.reload()
-        },3000)
-    }
-   
+    let version="1.1.0"
     const val={
         title:"Software updates"
+    }
+
+    const data={
+        version:version
     }
     return (
         <div>
@@ -30,17 +27,18 @@ function Software_updates() {
                 </div>
                 <div className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
                     <p className="text-xl max-sm:text-base">Software version</p>
-                    <p className="text-sm text-gray-500">{version}</p>
+                    <p className="text-sm text-gray-500">{localStorage.getItem("version")}</p>
                 </div>
-                <div onClick={update} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
+                <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
                     <p className="text-xl max-sm:text-base">Update</p>
-                    <p className="text-sm text-gray-500">Updated to 1.1.0</p>
+                    <p className="text-sm text-gray-500">Updated to {version}</p>
                 </div>
                 <a href="../../LICENSE" download="MIT License" className="hover:bg-gray-200 px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer">
                     <p className="text-xl max-sm:text-base">Legal information</p>
                     <p className="text-sm text-gray-500">MIT License</p>
                 </a>
             </div>
+            <Update_Dialog data={data}/>
         </div>
     );
 };

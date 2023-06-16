@@ -9,7 +9,7 @@ import { request } from './components/indexDB'
 import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
 import Footer from './components/UI/Footer'
-import { dialog } from './components/func'
+import { check_version_app, dialog } from './components/func'
 import Activity from './pages/Activity'
 import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
@@ -34,6 +34,7 @@ function App() {
   }
   useEffect(()=>{
     initDB()
+    check_version_app()
   },[]);
   
   const globalContent={

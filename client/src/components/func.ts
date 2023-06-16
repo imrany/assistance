@@ -53,10 +53,18 @@ const update_app = (name:string) => {
     })
 }
 
+const check_version_app=()=>{
+    const version=localStorage.getItem("version")
+    if(!version){
+        localStorage.setItem("version","1.0.0")
+    }
+}
+
 export{
     panel,
     dialog,
     reload,
     scroll_bottom,
-    update_app
+    update_app,
+    check_version_app
 }
