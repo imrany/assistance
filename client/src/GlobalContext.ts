@@ -5,4 +5,5 @@ export const GlobalContext=createContext<GlobalContent>({
     name:"",
     path:"",
     db:{},
+    version:""
 })

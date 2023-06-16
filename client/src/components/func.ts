@@ -48,23 +48,17 @@ const scroll_bottom=()=>{
 const update_app = (name:string) => {
     caches.delete(name).then((m:any)=>{
         console.log(m)
+        window.location.reload()
     }).catch((err:any)=>{
-        console.log(err)
+        alert(err.message)
     })
 }
 
-const check_version_app=()=>{
-    const version=localStorage.getItem("version")
-    if(!version){
-        localStorage.setItem("version","1.0.0")
-    }
-}
 
 export{
     panel,
     dialog,
     reload,
     scroll_bottom,
-    update_app,
-    check_version_app
+    update_app
 }

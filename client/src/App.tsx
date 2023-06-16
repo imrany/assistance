@@ -9,7 +9,7 @@ import { request } from './components/indexDB'
 import { useEffect, useState } from 'react'
 import { loader } from './components/preloader'
 import Footer from './components/UI/Footer'
-import { check_version_app, dialog } from './components/func'
+import { dialog } from './components/func'
 import Activity from './pages/Activity'
 import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
@@ -20,6 +20,7 @@ import Software_updates from './pages/Software_updates'
 
 function App() {
   const [db,setDB]=useState<any>(null)
+  const [version,setVersion]=useState("")
   function initDB(){
     loader.on()
     request.onsuccess=(event:any)=>{
@@ -32,6 +33,23 @@ function App() {
       dialog.open()
     }
   }
+  
+  const check_version_app=async()=>{
+    const version=localStorage.getItem("version")
+    if(!version){
+        localStorage.setItem("version","1.0.0")
+    }else{
+        try {
+            let url=`http://localhost:5000/api/version`
+            const response=await fetch(url)
+            const parRes=await response.json()
+            setVersion(parRes.version)
+        } catch (error:any) {
+            console.log(error.message)
+        }
+    }
+  }
+
   useEffect(()=>{
     initDB()
     check_version_app()
@@ -41,6 +59,7 @@ function App() {
     name:"Assistance",
     path:"/",
     db:db,
+    version:version
   };
   return (
     <>

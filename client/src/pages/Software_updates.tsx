@@ -1,12 +1,14 @@
 // @flow strict
 
+import { useContext } from "react";
 import PageHeader from "../components/UI/PageHeader";
 import Update_Dialog from "../components/UI/Update_Dialog";
 import { dialog } from "../components/func";
 import { status } from "../components/status";
+import { GlobalContext } from "../GlobalContext";
 
 function Software_updates() {
-    let version="1.1.0"
+    const {version}=useContext(GlobalContext)
     const val={
         title:"Software updates"
     }
@@ -37,7 +39,10 @@ function Software_updates() {
                 ):(
                     <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
                         <p className="text-xl max-sm:text-base">Update</p>
-                        <p className="text-sm text-gray-500">Updated to {version}</p>
+                        <p className="text-sm text-gray-500">{version===""?
+                        <span>Turn on mobile data or WIFI to fetch the recent updates</span>:(
+                            <span>Updated to {version}</span>
+                        )}</p>
                     </div>
                 )}
                 <a href="../../LICENSE" download="MIT License" className="hover:bg-gray-200 px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer">
