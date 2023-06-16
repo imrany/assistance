@@ -15,6 +15,13 @@ router.post("/chat",async(req:any,res:any)=>{
     }
 })
 
+router.get("/version",async(req:any,res:any)=>{
+    try {
+        res.send({version:"1.1.0"})
+    } catch (error:any) {
+        res.status(500).send({error:error.message})
+    }
+})
 export{
     router
 }
