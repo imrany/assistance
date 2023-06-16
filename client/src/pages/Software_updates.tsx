@@ -14,7 +14,7 @@ function Software_updates() {
             localStorage.setItem("version","1.0.0")
         }else{
             try {
-                let url=`http://localhost:5000/api/version`
+                let url=`https://assistance-server.onrender.com/api/version`
                 const response=await fetch(url)
                 const parRes=await response.json()
                 setVersion(parRes.version)
