@@ -29,10 +29,17 @@ function Software_updates() {
                     <p className="text-xl max-sm:text-base">Software version</p>
                     <p className="text-sm text-gray-500">{localStorage.getItem("version")}</p>
                 </div>
-                <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
-                    <p className="text-xl max-sm:text-base">Update</p>
-                    <p className="text-sm text-gray-500">Updated to {version}</p>
-                </div>
+                {localStorage.getItem("version")===version?(
+                    <div className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
+                        <p className="text-xl max-sm:text-base">Update</p>
+                            <p className="text-sm text-gray-500">No updates.</p>
+                    </div>
+                ):(
+                    <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
+                        <p className="text-xl max-sm:text-base">Update</p>
+                        <p className="text-sm text-gray-500">Updated to {version}</p>
+                    </div>
+                )}
                 <a href="../../LICENSE" download="MIT License" className="hover:bg-gray-200 px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer">
                     <p className="text-xl max-sm:text-base">Legal information</p>
                     <p className="text-sm text-gray-500">MIT License</p>
