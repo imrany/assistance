@@ -1,5 +1,5 @@
-# Insult checker
-Checks input as insult or not using brain.js
+# Assistance API
+This api interacts with our ML model 
 
 # Using Natural
 Certainly! Here's an example that uses the natural library in Node.js, which provides a range of natural language processing tools including a Naive Bayes classifier for text classification:
@@ -114,31 +114,3 @@ const insultProbability = prediction.dataSync()[0];
 console.log("Insult probability:", insultProbability);
 ```
 Note: This is a simplified example and may not be suitable for production-grade text classification tasks. It's important to understand the principles of machine learning, preprocess your data appropriately, and experiment with different model architectures and hyperparameters to optimize the model for your specific use case. Additionally, you may need to consider model evaluation, performance optimization, and other considerations for real-world applications.
-
-# Using Tensorflowjs toxicity model
-```js
-// Import TensorFlow.js library
-const tf = require('@tensorflow/tfjs');
-
-// Load the toxicity classifier model
-const toxicity = require('@tensorflow-models/toxicity');
-
-// Load the toxicity classifier model
-toxicity.load()
-  .then(model => {
-    // Test the model with some input data
-    const input = "You are so stupid";
-    model.classify([input])
-      .then(predictions => {
-        // Output the prediction
-        console.log("Toxicity predictions:", predictions);
-      })
-      .catch(error => {
-        console.error("Prediction error:", error);
-      });
-  })
-  .catch(error => {
-    console.error("Model loading error:", error);
-  });
-```
-Note: The toxicity model used in this example is a pre-trained model provided by TensorFlow.js that can detect toxic content in text, including insults. However, it's important to understand that the accuracy of the model may vary depending on your specific use case and data. It's recommended to evaluate the model's performance on your own data and consider fine-tuning or training your own model for better accuracy, if needed. Additionally, you may need to consider other factors such as data preprocessing, model optimization, and performance evaluation to ensure accurate and reliable text classification results in a real-world application.

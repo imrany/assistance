@@ -1,6 +1,5 @@
 import express from "express"
 import { ML } from "../ML";
-
 const router=express.Router()
 
 let index=0;
@@ -9,8 +8,8 @@ router.post("/chat",async(req:any,res:any)=>{
     try {
         const {request}=req.body
         const model=new ML(request)
-        // const response=model.natural_ml()
-        const response=model.brain_ml()
+        const response=model.natural_ml()
+        // const response=model.brain_ml()
         const more_about_it=`https://www.google.com/search?q=${request}`
         res.status(200).send({response:response,index:index, more:more_about_it})
     } catch (error:any) {
