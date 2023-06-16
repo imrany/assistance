@@ -1,17 +1,34 @@
 // @flow strict
 
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 import PageHeader from "../components/UI/PageHeader";
 import Update_Dialog from "../components/UI/Update_Dialog";
 import { dialog } from "../components/func";
 import { status } from "../components/status";
-import { GlobalContext } from "../GlobalContext";
 
 function Software_updates() {
-    const {version}=useContext(GlobalContext)
+    const [version,setVersion]=useState("")
+    const check_version_app=async()=>{
+        const version=localStorage.getItem("version")
+        if(!version){
+            localStorage.setItem("version","1.0.0")
+        }else{
+            try {
+                let url=`http://localhost:5000/api/version`
+                const response=await fetch(url)
+                const parRes=await response.json()
+                setVersion(parRes.version)
+            } catch (error:any) {
+                console.log(error.message)
+            }
+        }
+      }
     const val={
         title:"Software updates"
     }
+    useEffect(()=>{
+        check_version_app()
+    },[version])
 
     const data={
         version:version

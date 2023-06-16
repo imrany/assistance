@@ -18,7 +18,7 @@
           {
             "src":"/icons/shortcuts/chat.png",
             "type":"image/png",
-            "sizes":"72x72",
+            "sizes":"96x96",
             "purpose": "any"
           }
         ]
@@ -32,7 +32,7 @@
           {
             "src":"/icons/shortcuts/setting.png",
             "type":"image/png",
-            "sizes":"72x72",
+            "sizes":"96x96",
             "purpose": "any"
           }
         ]
@@ -46,7 +46,7 @@
           {
             "src":"/icons/shortcuts/history.png",
             "type":"image/png",
-            "sizes":"72x72",
+            "sizes":"96x96",
             "purpose": "any"
           }
         ]
