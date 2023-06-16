@@ -7,7 +7,7 @@ function modal(input:string):string{
   const classifier = new natural.BayesClassifier();
 
   // Train the NaiveBayes classifier
-  trainingData.forEach(data => classifier.addDocument(data.request, data.response));
+  trainingData.forEach(data => classifier.addDocument(data.Question, data.Answer));
   classifier.train();
 
   // Test the NaiveBayes classifier with some input data
