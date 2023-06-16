@@ -1,7 +1,7 @@
 import csv from "csvtojson"
 const csv_file_path=`${__dirname}/example.csv`
  
-let str="hello string and people"
+let str="hello  string  and people"
 // csv()
 //     .fromFile(csv_file_path)
 //     .then((jsonObj)=>{
@@ -14,7 +14,7 @@ const replace=()=>{
 }
 
 const split=()=>{
-    let new_str= str.split(" ").join("+")
+    let new_str= str.split("  ").join("+")
    console.log(new_str)
 }
 split()
