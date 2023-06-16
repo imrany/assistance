@@ -3,7 +3,7 @@ import { createReadStream, readFile, writeFile } from "fs"
 import { createInterface } from "readline"
 const csv_file_path=`${__dirname}/S10_question_answer_pairs.csv`
  
-let str="hello  string  and people"
+let output_file=`${__dirname}/outexample.csv`
 // csv()
 //     .fromFile(csv_file_path)
 //     .then((jsonObj)=>{
@@ -32,19 +32,23 @@ async function processLineByLine() {
   }
 }
 
-const read_file=()=>{
-    readFile(csv_file_path,"utf8",(err:any,data:any)=>{
-        // Display the file content
-        let new_data=data.split("   ").join(",")
-        writeFile(`${__dirname}/outexample.csv`,new_data,()=>{
+const change_tocsv_format=()=>{
+    readFile(output_file,"utf8",(err:any,data:any)=>{
+        let new_data=data.split("    ").join(",")
+        writeFile(`${__dirname}/outexamplescvformat.csv`,new_data,()=>{
             console.log('File added')
         })
     })
 }
 
-const split=(str:any)=>{
-    let new_str= str.split("  ").join("+")
-   console.log(new_str)
+const read_file=()=>{
+    readFile(csv_file_path,"utf8",(err:any,data:any)=>{
+        let new_data=data.split("	").join("    ")
+        writeFile(output_file,new_data,()=>{
+            console.log('spacing changed')
+            change_tocsv_format()
+        })
+    })
 }
-processLineByLine()
-// read_file()
+
+read_file()
