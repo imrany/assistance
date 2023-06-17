@@ -44,11 +44,11 @@ function App() {
   };
   return (
     <>
+    <GlobalContext.Provider value={globalContent}>
+      <Router>
     <div className='preload'>
       <p className='fixed max-sm:left-[42vw] left-[46vw] md:left-[48vw] top-[54vh] max-sm:text-base text-lg'>Loading...</p>
     </div>
-    <GlobalContext.Provider value={globalContent}>
-      <Router>
         <Notice notice={status()}/>
           <Routes>
             <Route path="/" element={<Home/>}/>
