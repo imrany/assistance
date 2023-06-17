@@ -41,10 +41,10 @@ function Nav() {
                         <p>Send Feedback</p>
                     </li>
                     <li className="my-4" onClick={panel.close}>
-                        <Link to="">Privacy policy</Link>
+                        <Link to="/">Privacy policy</Link>
                     </li>
                     <li className="my-4" onClick={panel.close}>
-                        <Link to="">Terms of service</Link>
+                        <Link to="/">Terms of service</Link>
                     </li>
                 </ul>
             </div>
