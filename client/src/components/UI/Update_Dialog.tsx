@@ -23,7 +23,7 @@ function Update_Dialog(prop:Props) {
                 <div className="text-center">
                     <p className="text-2xl  max-sm:text-lg my-2"> Failed to fetch updates</p>
                     <p className="text-sm max-sm:text-xs text-gray-400 lg:w-[300px]">
-                        Failed to connect to our remote server.
+                        Failed to connect to remote server.
                     </p>
                     <div className="flex justify-center mt-4">
                         <button className="bg-blue-500 text-white border-none px-4 py-2 text-xs rounded-md mr-6" onClick={reload}>Reload</button>
