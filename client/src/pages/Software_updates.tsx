@@ -57,7 +57,7 @@ function Software_updates() {
                     <div onClick={dialog.open} className="px-4 lg:px-14 border-b-[1px] py-3 cursor-pointer hover:bg-gray-200">
                         <p className="text-xl max-sm:text-base">Update</p>
                         <p className="text-sm text-gray-500">{version===""?
-                        <span>Turn on mobile data or WIFI to fetch the recent updates</span>:(
+                        <span>Failed to fetch updates.</span>:(
                             <span>Updated to {version}</span>
                         )}</p>
                     </div>
