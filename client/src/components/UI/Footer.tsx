@@ -2,7 +2,7 @@ import logo from "/favicon.png"
 // @flow strict
 function Footer() {
     return (
-        <footer className="fixed bottom-0 left-0 right-0 text-black bg-gray-100 rounded-t-[15px] shadow-2xl flex justify-between py-5 px-20 max-md:px-4" id="install_indicator"  hidden>
+        <footer className="fixed bottom-0 left-0 right-0 bg-gray-50 rounded-t-[15px] shadow-2xl flex justify-between py-5 px-20 max-md:px-4" id="install_indicator"  hidden>
             <div className="flex">
                 <img src={logo} alt="." className="w-8 h-8 rounded-[5px]"/>
                 <p className="ml-2 max-md:text-sm my-1 font-semibold text-base">Assistance</p>
