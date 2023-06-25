@@ -40,6 +40,9 @@ function Home() {
         keyboard.style.display="none"
         let input=document.getElementById("show-input") as HTMLDivElement
         input.style.display="block"
+        input.style.bottom="0"
+        let footer=document.getElementById("install_indicator") as HTMLElement
+        footer.classList.add("close")
     }
     
     let date=new Date()
@@ -110,7 +113,7 @@ function Home() {
                 <div className='preload'></div>
                 <Window data={data}/>
 
-                <div className="fixed bottom-16 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
+                <div className="fixed bottom-20 right-14 max-sm:right-8 cursor-pointer bg-slate-100 shadow-lg px-2 rounded-[10px]" id="keyboard" onClick={showInput}>
                     <i className="ri-message-3-fill ri-2x text-gray-700"></i>
                 </div>
                 <div id="show-input" className="fixed left-0 right-0 border-[1px] bg-white">

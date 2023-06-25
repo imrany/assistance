@@ -32,7 +32,7 @@ function Nav() {
                         <Link to="/settings">Settings</Link>
                     </li>
                     <li className="my-4" onClick={panel.close}>
-                        <Link to="/explore">Explore</Link>
+                        <Link to="/activity">Explore</Link>
                     </li>
                     <li className="my-4" onClick={panel.close}>
                         <Link to="/help">Help</Link>
@@ -41,10 +41,7 @@ function Nav() {
                         <p>Send Feedback</p>
                     </li>
                     <li className="my-4" onClick={panel.close}>
-                        <Link to="/">Privacy policy</Link>
-                    </li>
-                    <li className="my-4" onClick={panel.close}>
-                        <Link to="/">Terms of service</Link>
+                        <Link to="/auth/sign_in">Get Started</Link>
                     </li>
                 </ul>
             </div>

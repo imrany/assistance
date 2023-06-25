@@ -7,7 +7,7 @@
     "background_color":"#FFFF",
     "theme_color":"#FFFF",
     "orientation":"portrait-primary",
-    "display":"standalone",
+    "display":"minimal-ui",
     "shortcuts":[
       {
         "name":"Chat",

@@ -1,19 +1,13 @@
-import { useNavigate } from "react-router-dom";
-
+import logo from "/favicon.png"
 // @flow strict
 function Footer() {
-    const navigate=useNavigate()
-    const close=()=>{
-        navigate("/auth/sign_in")
-        const footer=document.querySelector("footer") as HTMLElement
-        const input=document.getElementById("show-input") as HTMLDivElement
-        footer.classList.add("close")
-        input.style.bottom="0"
-    }
     return (
-        <footer className="fixed bottom-0 left-0 right-0 text-white bg-blue-600 flex justify-between py-5 px-20 max-md:px-4">
-            <p className="max-md:text-sm">Unlock more features</p>
-            <div className="font-semibold max-md:text-sm cursor-pointer" onClick={close}>GET STARTED</div>
+        <footer className="fixed bottom-0 left-0 right-0 text-black bg-gray-100 rounded-t-[15px] shadow-2xl flex justify-between py-5 px-20 max-md:px-4" id="install_indicator"  hidden>
+            <div className="flex">
+                <img src={logo} alt="." className="w-8 h-8 rounded-[5px]"/>
+                <p className="ml-2 max-md:text-sm my-1 font-semibold text-base">Assistance</p>
+            </div>
+            <div className="bg-blue-600 py-2 text-white px-5 rounded-[30px] font-semibold max-md:text-sm cursor-pointer" id="install" title="Install Assistance">Install</div>
         </footer>
     );
 };
