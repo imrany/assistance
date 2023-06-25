@@ -31,7 +31,7 @@ if(Notification.permission === 'granted'){
         const input=document.getElementById("show-input") as HTMLDivElement
         input.style.bottom="0"
         container.hidden = false;
-        btn.onclick = _ => e.prompt();
+        btn.onclick =()=> e.prompt();
         return e.preventDefault();
     }
 });
