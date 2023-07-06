@@ -48,7 +48,7 @@ const scroll_bottom=()=>{
 const update_cache = (name:string) => {
     caches.delete(name).then((m:any)=>{
         console.log(m)
-        window.location.reload()
+        reload()
     }).catch((err:any)=>{
         alert(err.message)
     })
