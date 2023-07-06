@@ -1,6 +1,6 @@
 // @flow strict
 
-import { dialog, reload, update_app } from "../func";
+import { dialog, reload, update_cache } from "../func";
 
 type Props={
     data:{
@@ -10,7 +10,7 @@ type Props={
 function Update_Dialog(prop:Props) {
     const update=()=>{
         // "site-static"
-        update_app("site-dynamic")
+        update_cache("site-dynamic")
         localStorage.setItem("version",prop.data.version)
     }
    

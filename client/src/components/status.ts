@@ -1,6 +1,7 @@
 // @flow strict
 import { useEffect, useState } from "react";
 import { Status } from "../types/types";
+import { update_cache } from "./func";
 
 function status() {
     const [status,setStatus]=useState<Status>({
@@ -9,6 +10,7 @@ function status() {
     })
     useEffect(()=>{
         if (navigator.onLine) {
+            update_cache("site-dynamic")
             setStatus({
                 value:navigator.onLine,
                 text:"Back online"

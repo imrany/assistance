@@ -45,7 +45,7 @@ const scroll_bottom=()=>{
 }
 
 //clear cache function as update'
-const update_app = (name:string) => {
+const update_cache = (name:string) => {
     caches.delete(name).then((m:any)=>{
         console.log(m)
         window.location.reload()
@@ -60,5 +60,5 @@ export{
     dialog,
     reload,
     scroll_bottom,
-    update_app
+    update_cache
 }
