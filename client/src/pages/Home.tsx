@@ -85,10 +85,12 @@ function Home() {
     useEffect(()=>{
         const input=document.getElementById("show-input") as HTMLDivElement
         const footer=document.querySelector("footer") as HTMLElement
-        if(footer.classList.contains("close")){
-            input.style.bottom="0"
-        }else{
-            input.style.bottom="3.5rem"
+        if (!localStorage.getItem("installed")) {
+            if(footer.classList.contains("close")){
+                input.style.bottom="0"
+            }else{
+                input.style.bottom="3.5rem"
+            }
         }
         setAlert("There was a problem loading the item. Please refresh the page and try again.")
     },[])

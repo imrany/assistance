@@ -5,7 +5,8 @@ const assets = [
     '/',
     '/index.html',
     '/assets',
-    '/manifest.json'
+    '/manifest.json',
+    "https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 ]
 
 //installing service worker
