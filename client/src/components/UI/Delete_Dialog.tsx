@@ -1,7 +1,6 @@
 // @flow strict
-import { useContext } from "react";
 import { dialog, reload } from "../func";
-import { GlobalContext } from "../../GlobalContext";
+import indexedDB from "../indexDB";
 
 type Props={
     message:{
@@ -10,8 +9,9 @@ type Props={
     }
 }
 function Delete_Dialog(prop:Props) {
-    const {db}=useContext(GlobalContext)
-    const delete_from_db=()=>{
+    const delete_from_db=async()=>{
+        const request=await indexedDB()
+        const db:any=await request
         const transaction=db.transaction("Chats","readwrite")
         const store=transaction.objectStore("Chats")
         const getAll=store.delete(prop.message.index)
