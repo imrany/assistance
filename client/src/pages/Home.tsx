@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { loader } from "../components/preloader";
 import Dialog from "../components/UI/Dialog";
 import Nav from "../components/UI/Nav";
-import indexedDB from "../components/indexDB";
+import indexedDB from "./indexDB";
 
 function Home() {
     const [data,setData]=useState<Data>([])
