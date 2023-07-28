@@ -4,7 +4,7 @@ import PageHeader from "../components/UI/PageHeader";
 import img from "/icons/assistance-72x72.png"
 import { dialog } from "../components/func";
 import Delete_Dialog from "../components/UI/Delete_Dialog";
-import indexedDB from "./indexDB";
+import indexedDB from "../components/indexDB";
 
 function Activity() {
     const [history,setHistory]=useState([
