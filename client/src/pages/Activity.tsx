@@ -1,13 +1,12 @@
 // @flow strict
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import PageHeader from "../components/UI/PageHeader";
 import img from "/icons/assistance-72x72.png"
 import { dialog } from "../components/func";
-import { GlobalContext } from "../GlobalContext";
 import Delete_Dialog from "../components/UI/Delete_Dialog";
+import indexedDB from "../components/indexDB";
 
 function Activity() {
-    const {db}=useContext(GlobalContext)
     const [history,setHistory]=useState([
         {
             index:0,
@@ -21,7 +20,9 @@ function Activity() {
         title:"My activity"
     }
 
-    function fetchFromIDB(){
+   async function fetchFromIDB(){
+        const request=await indexedDB()
+        const db:any=await request
         const transaction=db.transaction("Chats","readwrite")
         const store=transaction.objectStore("Chats")
         const getAll=store.getAll()
@@ -33,9 +34,9 @@ function Activity() {
             dialog.open()
         }
     }
-    window.onclick=()=>{
+    useEffect(()=>{
         fetchFromIDB()
-    }
+    },[])
     const [alert, setAlert]=useState({
         text:``,
         index:0
@@ -61,7 +62,7 @@ function Activity() {
                                     <p className="text-gray-500 text-base ml-4 mt-2">Assistance</p>
                                 </div>
                                 <p className="text-base my-3"><i className="ri-search-eye-line"></i> <span className="text-blue-500">{i.request}</span></p>
-                                {!i.response.includes("Hello")?
+                                {i.response!=="NULL"?
                                     <p className='text-base max-sm:text-sm' title="AI's response">{i.response}</p>
                                 :<p className='text-base max-sm:text-sm  text-red-600'>Cannot generate a valid response. Find out from other sources...</p>}
 

@@ -5,11 +5,7 @@ import Fallback from './pages/Fallback'
 import { status } from './components/status'
 import Notice from './components/UI/Notice'
 import Settings from './pages/Settings'
-import { request } from './components/indexDB'
-import { useEffect, useState } from 'react'
-import { loader } from './components/preloader'
 import Footer from './components/UI/Footer'
-import { dialog } from './components/func'
 import Activity from './pages/Activity'
 import Sign_in from './pages/Sign_in'
 import Sign_up from './pages/Sign_up'
@@ -19,28 +15,9 @@ import Notfound from './pages/Notfound'
 import Software_updates from './pages/Software_updates'
 
 function App() {
-  const [db,setDB]=useState<any>(null)
-  function initDB(){
-    loader.on()
-    request.onsuccess=(event:any)=>{
-        setDB(event.target.result)
-        loader.off()
-    }
-    request.onerror=(event:any)=>{
-      loader.off()
-      console.log(event.target.result)
-      dialog.open()
-    }
-  }
-
-  useEffect(()=>{
-    initDB()
-  },[]);
-  
   const globalContent={
     name:"Assistance",
     path:"/",
-    db:db
   };
   return (
     <>

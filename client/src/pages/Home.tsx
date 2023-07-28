@@ -2,18 +2,19 @@
 import { dialog, panel, scroll_bottom } from "../components/func";
 import { Data, DataAdded } from "../types/types";
 import Window from "../components/UI/Window";
-import { useContext, useEffect, useState } from "react";
-import { GlobalContext } from "../GlobalContext";
+import { useEffect, useState } from "react";
 import { loader } from "../components/preloader";
 import Dialog from "../components/UI/Dialog";
 import Nav from "../components/UI/Nav";
+import indexedDB from "../components/indexDB";
 
 function Home() {
-    const {db}=useContext(GlobalContext)
     const [data,setData]=useState<Data>([])
     const [alert,setAlert]=useState("")
 
-    function addDataToDB(data:DataAdded){
+    async function addDataToDB(data:DataAdded){
+        const request=await indexedDB()
+        const db:any=await request
         const transaction=db.transaction("Chats","readwrite")
         const store=transaction.objectStore("Chats")
         store.add(data)
@@ -22,7 +23,9 @@ function Home() {
         }
     }
 
-    function fetchFromIDB(){
+    async function fetchFromIDB(){
+        const request=await indexedDB()
+        const db:any=await request
         const transaction=db.transaction("Chats","readwrite")
         const store=transaction.objectStore("Chats")
         const getAll=store.getAll()
@@ -93,21 +96,9 @@ function Home() {
             }
         }
         setAlert("There was a problem loading the item. Please refresh the page and try again.")
-    },[])
-    if(db===null){
-       console.log(db)
-    }else{
-        window.onload=()=>{
-            fetchFromIDB()
-        }
-    }
-    
-    window.onclick=()=>{
         fetchFromIDB()
-    }
-    // setTimeout(()=>{
-    //     fetchFromIDB();
-    // },10)
+    },[])
+    
     return (
         <>
             <Nav/>
